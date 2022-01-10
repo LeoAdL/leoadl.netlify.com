@@ -1,6 +1,6 @@
 ---
 widget: about
-widget_id: my-widget-123
+widget_id: biography
 headless: true
 weight: 10
 active: true
