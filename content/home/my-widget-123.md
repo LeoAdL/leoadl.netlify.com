@@ -10,4 +10,4 @@ design:
     text_color_light: false
     image_darken: 0
 ---
-author: 'index'
+author: 'admin'
