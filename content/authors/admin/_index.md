@@ -6,7 +6,7 @@ last_name: Aparisi de Lannoy
 # Is this the primary user of the site?
 superuser: true
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include Macroeconomics, Monetary Economics and Macro-Finance.
+bio: My research interests include **Macroeconomics**, **Monetary Economics** and **Macro-Finance**.
 
 
 role: Ph.D. Candidate in Economics
