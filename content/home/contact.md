@@ -15,7 +15,7 @@ subtitle:
 content:
   # Automatically link email and phone or display as text?
   autolink: true
-  
+
   # Email form provider
   form:
     provider: netlify
@@ -24,7 +24,25 @@ content:
     netlify:
       # Enable CAPTCHA challenge to reduce spam?
       captcha: false
-  
+
+  email: laparisidelannoy@uchicago.edu
+  phone: (312)-394-9854
+  address:
+    street: 5757 S University Ave
+    city: Chicago
+    region: IL
+    postcode: "60637"
+    country: United States
+    country_code: US
+  coordinates:
+    latitude: "41.789719"
+    longitude: "-87.597219"
+  contact_links:
+    - icon: twitter
+      icon_pack: fab
+      name: DM Me
+      link: "https://twitter.com/LeoAparisidL"
+
 design:
-  columns: '2'
+  columns: "2"
 ---
