@@ -5,7 +5,7 @@ avatar_filename: avatar.jpg
 bio: ""
 interests:
   - Macroeconomics
-  - Dynamic Contracts
+  - Monetary Economics
   - Asset Pricing
 social:
   - icon: envelope
