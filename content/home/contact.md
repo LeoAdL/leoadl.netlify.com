@@ -1,6 +1,5 @@
 ---
 # An instance of the Contact widget.
-# Documentation: https://sourcethemes.com/academic/docs/page-builder/
 widget: contact
 
 # This file represents a page section.
@@ -11,12 +10,6 @@ weight: 130
 
 title: Contact
 subtitle:
-
-features:
-  map:
-    provider: "mapnik"
-    api_key: ""
-    zoom: 15
 
 content:
   # Automatically link email and phone or display as text?
@@ -30,24 +23,35 @@ content:
     netlify:
       # Enable CAPTCHA challenge to reduce spam?
       captcha: false
-  email: laparisidelannoy@uchicago.edu
-  phone: (312)-394-9854
+
+  # Contact details (edit or remove options as required)
+  email: test@example.org
+  phone: 888 888 88 88
   address:
-    street: 5757 S University Ave
-    city: Chicago
-    region: IL
-    postcode: "60637"
+    street: 450 Serra Mall
+    city: Stanford
+    region: CA
+    postcode: '94305'
     country: United States
     country_code: US
   coordinates:
-    latitude: "41.789719"
-    longitude: "-87.597219"
+    latitude: '37.4275'
+    longitude: '-122.1697'
+  directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
+  office_hours:
+    - 'Monday 10:00 to 13:00'
+    - 'Wednesday 09:00 to 10:00'
+  appointment_url: 'https://calendly.com'
   contact_links:
     - icon: twitter
       icon_pack: fab
       name: DM Me
-      link: "https://twitter.com/LeoAparisidL"
+      link: 'https://twitter.com/Twitter'
+    - icon: video
+      icon_pack: fas
+      name: Zoom Me
+      link: 'https://zoom.com'
 
 design:
-  columns: "2"
+  columns: '2'
 ---
