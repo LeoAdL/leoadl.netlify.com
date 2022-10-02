@@ -24,7 +24,6 @@ content:
     netlify:
       # Enable CAPTCHA challenge to reduce spam?
       captcha: false
-
   email: laparisidelannoy@uchicago.edu
   phone: (312)-394-9854
   address:
