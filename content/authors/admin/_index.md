@@ -20,7 +20,7 @@ interests:
 social:
   - icon: envelope
     icon_pack: fas
-    link: laparisidelannoy@uchicago.edu
+    link: mailto:laparisidelannoy@uchicago.edu
   - icon: twitter
     icon_pack: fab
     link: https://twitter.com/LeoAparisidL
