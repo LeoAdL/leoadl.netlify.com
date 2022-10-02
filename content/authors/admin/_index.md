@@ -2,7 +2,7 @@
 title: Leo Aparisi de Lannoy
 role: Ph.D. Candidate in Economics
 avatar_filename: avatar.jpg
-bio: ""
+bio: dddd
 interests:
   - Macroeconomics
   - Monetary Economics
