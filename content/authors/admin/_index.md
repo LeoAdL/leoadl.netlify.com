@@ -8,7 +8,6 @@ superuser: true
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include **Macroeconomics**, **Monetary Economics** and **Macro-Finance**.
 
-
 role: Ph.D. Candidate in Economics
 avatar_filename: avatar.jpg
 interests:
@@ -31,7 +30,7 @@ social:
     link: https://github.com/LeoAdL
   - icon: linkedin
     icon_pack: fab
-    link: https://www.linkedin.com/in/l%C3%A9o-aparisi-de-lannoy
+    link: https://www.linkedin.com/in/l%C3%A9o-aparisi-de-lannoy-311b8684/
 
 organizations:
   - name: University of Chicago
