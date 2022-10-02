@@ -11,7 +11,6 @@ bio: My research interests include Macroeconomics, Monetary Economics and Macro-
 
 role: Ph.D. Candidate in Economics
 avatar_filename: avatar.jpg
-bio: ""
 interests:
   - Macroeconomics
   - Monetary Economics
