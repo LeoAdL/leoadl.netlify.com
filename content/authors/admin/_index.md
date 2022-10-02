@@ -3,6 +3,11 @@ title: Leo Aparisi de Lannoy
 role: Ph.D. Candidate in Economics
 avatar_filename: avatar.jpg
 bio: ""
+interests:
+  - Macroeconomics
+  - Monetary Economics
+  - Macro-Finance
+  - Asset pricing.
 social:
   - icon: envelope
     icon_pack: fas
@@ -19,18 +24,3 @@ email: laparisidelannoy@uchicago.edu
 superuser: true
 highlight_name: true
 ---
-
-| Primary field | Secondary field |
-| :-----------: | :-------------: |
-|      A1       |       B1        |
-|      A2       |       B2        |
-|      A3       |       B3        |
-# Primary field
-
-- **Macroeconomics**
-- **Monetary Economics**
-
-# Secondary field
-
-- Macro-Finance
-- Asset pricing.
