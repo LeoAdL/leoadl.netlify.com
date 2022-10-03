@@ -8,7 +8,7 @@ main:
     url: /#about
     weight: 10
   - name: JMP
-    url: /#projects
+    url: /#featured
     weight: 20
   - name: CV
     url: uploads/resume.pdf
@@ -16,12 +16,18 @@ main:
   - name: Publications
     url: /#publications
     weight: 40
-  - name: Teaching
-    url: /#teaching
+  - name: Research
+    url: /#experience2
     weight: 50
+  - name: Teaching
+    url: /#experience
+    weight: 60
+  - name: Skills
+    url: /#skils
+    weight: 80
   - name: Contact
     url: /#contact
-    weight: 60
+    weight: 80
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/uploads/resume.pdf` and uncomment the lines below.
