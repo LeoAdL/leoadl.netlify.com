@@ -17,14 +17,14 @@ main:
     url: /#publications
     weight: 40
   - name: Research
-    url: /#experience2
+    url: /#researchexp
     weight: 50
   - name: Teaching
     url: /#experience
     weight: 60
   - name: Skills
-    url: /#skils
-    weight: 80
+    url: /#skills
+    weight: 70
   - name: Contact
     url: /#contact
     weight: 80

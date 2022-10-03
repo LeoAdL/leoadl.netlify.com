@@ -26,11 +26,11 @@ experience:
     company: University of Chicago
     company_url: "https://www.uchicago.edu/"
     company_logo: U_Chicago
-    date_start: "2021-09-01"
+    date_start: "2020-09-01"
     date_end: "2021-12-01"
     description: |2-
-      **Topics in Economics**
-      * Masters in Financial Mathematics
+      * **Topics in Economics**
+        * Masters in Financial Mathematics
   - title: Teaching Assistant
     company: The University of Chicago Booth School of Business
     company_url: "https://www.chicagobooth.edu/"
@@ -38,8 +38,8 @@ experience:
     date_start: "2021-06-01"
     date_end: "2021-09-01"
     description: |2-
-      **Money, Banking, and the Financial Crisis**
-      * EMBA
+      * **Money, Banking, and the Financial Crisis**
+        * EMBA
   - title: Teaching Assistant
     company: University of Chicago
     company_url: "https://www.uchicago.edu/"
@@ -47,8 +47,8 @@ experience:
     date_start: "2021-03-01"
     date_end: "2021-06-01"
     description: |2-
-      **Financial Markets in the Macroeconomy**
-      * PhD
+      * **Financial Markets in the Macroeconomy**
+        * PhD
   - title: Teaching Assistant
     company: University of Chicago
     company_url: "https://www.uchicago.edu/"
@@ -56,8 +56,8 @@ experience:
     date_start: "2021-03-01"
     date_end: "2021-06-01"
     description: |2-
-      **Risk, Uncertainty, and Value: prices, quantities, and policies**
-      * PhD
+      * **Risk, Uncertainty, and Value: prices, quantities, and policies**
+        * PhD
   - title: Teaching Assistant
     company: University of Chicago
     company_url: "https://www.uchicago.edu/"
@@ -65,8 +65,8 @@ experience:
     date_start: "2020-01-01"
     date_end: "2022-03-01"
     description: |2-
-      **Empirical Analysis II**
-      * PhD
+      * **Empirical Analysis II**
+        * PhD
   - title: Teaching Assistant
     company: University of Chicago
     company_url: "https://www.uchicago.edu/"
@@ -74,8 +74,8 @@ experience:
     date_start: "2020-09-01"
     date_end: "2020-12-01"
     description: |2-
-      **Monetary Economics I**
-      * PhD
+      * **Monetary Economics I**
+        * PhD
   - title: Teaching Assistant
     company: University of Chicago
     company_url: "https://www.uchicago.edu/"
@@ -83,8 +83,8 @@ experience:
     date_start: "2019-09-01"
     date_end: "2019-12-01"
     description: |2-
-      **Theory of Income I**
-      * PhD
+      * **Theory of Income I**
+        * PhD
 
 design:
   columns: "2"
