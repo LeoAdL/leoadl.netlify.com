@@ -7,9 +7,6 @@ main:
   - name: Home
     url: /#about
     weight: 10
-  - name: JMP
-    url: /#featured
-    weight: 20
   - name: CV
     url: uploads/resume.pdf
     weight: 30
