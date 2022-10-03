@@ -10,7 +10,7 @@ bio: My research interests include **Macroeconomics**, **Monetary Economics** an
 
 role: Ph.D. Candidate in Economics
 avatar_filename: avatar.jpg
-interests:
+interests: 
   - Macroeconomics
   - Monetary Economics
   - Macro-Finance
@@ -31,12 +31,22 @@ social:
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/l%C3%A9o-aparisi-de-lannoy-311b8684/
+  - icon: cv
+    icon_pack: ai
+    link: uploads/resume.pdf
 
 organizations:
   - name: University of Chicago
     url: https://economics.uchicago.edu/
 education:
-  courses: []
+  courses:
+    - course: Ph.D. in Economics
+      institution: University of Chicago
+    - course: M.SC. Analysis and Policy in Economics
+      institution: Paris School of Economics
+    - course: B.Sc. in Physics
+      institution: École Normale Supérieure Ulm
+
 email: laparisidelannoy@uchicago.edu
 
 # Link to a PDF of your resume/CV.
@@ -45,11 +55,6 @@ email: laparisidelannoy@uchicago.edu
 
 # and uncomment the lines below.
 
-# - icon: cv
-
-# icon_pack: ai
-
-# link: uploads/resume.pdf
 
 highlight_name: true
 ---
