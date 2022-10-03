@@ -36,4 +36,4 @@ design:
   columns: "2"
 ---
 
-Quickly discover relevant content by [filtering publications](./publication/).
+_Quickly discover relevant content by [filtering publications](./publication/)._
