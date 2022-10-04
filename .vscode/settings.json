@@ -1,4 +1,5 @@
 {
   "gitdoc.enabled": false,
-  "cSpell.words": ["linkedin"]
+  "cSpell.words": ["linkedin"],
+  "git.ignoreLimitWarning": true
 }

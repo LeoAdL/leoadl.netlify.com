@@ -10,7 +10,7 @@ bio: My research interests include **Macroeconomics**, **Monetary Economics** an
 
 role: Ph.D. Candidate in Economics
 avatar_filename: avatar.jpg
-interests: 
+interests:
   - Macroeconomics
   - Monetary Economics
   - Macro-Finance
@@ -33,7 +33,7 @@ social:
     link: https://www.linkedin.com/in/l%C3%A9o-aparisi-de-lannoy-311b8684/
   - icon: cv
     icon_pack: ai
-    link: uploads/resume.pdf
+    link: "uploads/Leo Aparisi de Lannoy _ CV.pdf"
 
 organizations:
   - name: University of Chicago
@@ -54,7 +54,6 @@ email: laparisidelannoy@uchicago.edu
 # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.yaml`,
 
 # and uncomment the lines below.
-
 
 highlight_name: true
 ---
