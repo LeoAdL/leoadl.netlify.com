@@ -10,7 +10,7 @@ main:
   - name: CV
     url: uploads/resume.pdf
     weight: 30
-  - name: Publications
+  - name: Papers
     url: /#publications
     weight: 40
   - name: Research
