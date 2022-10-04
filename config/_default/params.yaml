@@ -19,13 +19,14 @@ marketing:
     local_business_type: ''
     org_name: ''
     description: 'Leo Aparisi de Lannoy personal website'
-    twitter: 'https://twitter.com/LeoAparisidL'
+    twitter: 'LeoAparisidL'
   analytics:
     google_analytics: 'G-XSQ2V43E3X'
     baidu_tongji: ''
   verification:
     google: ''
     baidu: ''
+    bing: ''
 
 # Site header
 
