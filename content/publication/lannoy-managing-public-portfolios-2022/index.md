@@ -39,5 +39,5 @@ publication: "NBER Working Paper"
 doi: 10.3386/w30501
 links:
 url_pdf: https://static1.squarespace.com/static/54c19f18e4b0ef5f4b9f8dae/t/6328ee5213a65c43a48423f8/1663626851912/abegs4draft.pdf
-url_source: "https://www-nber-org.proxy.uchicago.edu/papers/w30501"
+url_source: "https://www.nber.org/papers/w30501"
 ---
