@@ -19,27 +19,27 @@ feature:
   - description: Proficient
     icon: python
     icon_pack: "custom"
-    name:
+    name: Python
+  - description: Proficient
+    icon: nvim
+    icon_pack: "custom"
+    name: NeoVim
   - description: Proficient
     icon: julia
     icon_pack: "custom"
-    name:
-  - description: Proficient
-    icon: latex
-    icon_pack: "custom"
-    name:
+    name: Julia
   - description: Native
     icon: france
     icon_pack: "custom"
-    name:
+    name: French
   - description: Fluent
     icon: US
     icon_pack: "custom"
-    name:
+    name: English
   - description: Proficient
     icon: spain
     icon_pack: "custom"
-    name:
+    name: Spanish
 # Uncomment to use emoji icons.
 #- icon: ":smile:"
 #  icon_pack: "emoji"
