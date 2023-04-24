@@ -14,7 +14,7 @@ interests:
   - Macroeconomics
   - Monetary Economics
   - Macro-Finance
-  - Asset pricing.
+  - Asset pricing
 social:
   - icon: envelope
     icon_pack: fas
