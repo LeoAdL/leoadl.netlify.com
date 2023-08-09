@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: Managing Public Portfolios
+title: Managing Public Portfolios (R&R @JPE)
 subtitle: ""
 summary: ""
 authors:

@@ -32,8 +32,6 @@ content:
   order: desc
 design:
   # Choose a view for the listings:
-  view: Card
+  view: list
   columns: "2"
 ---
-
-_Quickly discover relevant content by [filtering publications](./publication/)._
