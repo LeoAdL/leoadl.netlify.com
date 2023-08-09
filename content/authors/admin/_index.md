@@ -6,7 +6,7 @@ last_name: Aparisi de Lannoy
 # Is this the primary user of the site?
 superuser: true
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include **Macroeconomics**, **Monetary Economics** and **Macro-Finance**.
+bio: My research interests include **Macroeconomics**, **Monetary Economics**, **Macro-Finance**, and **Asset-Pricing**.
 
 role: Ph.D. Candidate in Economics
 avatar_filename: avatar.jpg
@@ -33,7 +33,7 @@ social:
     link: https://www.linkedin.com/in/leo-aparisi-de-lannoy-311b8684/
   - icon: cv
     icon_pack: ai
-    link: "uploads/Leo Aparisi de Lannoy _ CV.pdf"
+    link: "uploads/Leo_Aparisi_de_Lannoy_CV.pdf"
 
 organizations:
   - name: University of Chicago
