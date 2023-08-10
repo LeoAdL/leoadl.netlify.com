@@ -17,18 +17,31 @@
 %-------------------------------------------------------------------------------
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
-% A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, a4paper]{awesome-cv}
-
+\documentclass[11pt, letterpaper]{awesome-cv}
+\providecolor{url}{HTML}{179299}
+\providecolor{link}{HTML}{179299}
+\providecolor{cite}{HTML}{179299}
+\hypersetup{pdfauthor={Leo Aparisi de Lannoy}
+pdftitle={},
+pdfkeywords={},
+pdfsubject={},
+pdfcreator={},
+pdflang={English},
+breaklinks=true,
+colorlinks=true,
+linkcolor=link,
+urlcolor=url,
+citecolor=cite
+}
 % Configure page margins with geometry
 \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
 % Color for highlights
 % Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
 %                 awesome-nephritis, awesome-concrete, awesome-darknight
-\colorlet{awesome}{awesome-red}
+%\colorlet{awesome}{awesome-red}
 % Uncomment if you would like to specify your own color
-% \definecolor{awesome}{HTML}{3E6D9C}
+\definecolor{awesome}{HTML}{179299}
 
 % Colors for text
 % Uncomment if you would like to specify your own color
@@ -37,6 +50,7 @@
 % \definecolor{graytext}{HTML}{5D5D5D}
 % \definecolor{lighttext}{HTML}{999999}
 % \definecolor{sectiondivider}{HTML}{5D5D5D}
+
 
 % Set false if you don't want to highlight section with awesome color
 \setbool{acvSectionColorHighlight}{true}
@@ -50,17 +64,16 @@
 %	Comment any of the lines below if they are not required
 %-------------------------------------------------------------------------------
 % Available options: circle|rectangle,edge/noedge,left/right
-% \photo[rectangle,edge,right]{./examples/profile}
-\name{Byungjin}{Park}
-\position{Site Reliability Engineer{\enskip\cdotp\enskip}Software Architect}
-\address{235, World Cup buk-ro, Mapo-gu, Seoul, 03936, Republic of Korea}
-
-\mobile{(+82) 10-9030-1843}
-\email{posquit0.bj@gmail.com}
-%\dateofbirth{January 1st, 1970}
-\homepage{www.posquit0.com}
-\github{posquit0}
-\linkedin{posquit0}
+% \photo{./examples/profile.png}
+\name{Léo}{Aparisi de Lannoy}
+\mobile{(+1)312-394-9854}
+\email{laparisidelannoy@uchicago.edu}
+%\dateofbirth{07-27-1995}
+\extrainfo{French citizen (F1 visa)}
+\homepage{leoadl.com}
+\github{leoadl}
+\linkedin{leo-aparisi-de-lannoy-311b8684}
+ \googlescholar{ZrkvVt0AAAAJ}{Scholar}
 % \gitlab{gitlab-id}
 % \stackoverflow{SO-id}{SO-name}
 % \twitter{@twit}
@@ -70,10 +83,7 @@
 % \kaggle{kaggle-id}
 % \googlescholar{googlescholar-id}{name-to-display}
 %% \firstname and \lastname will be used
-% \googlescholar{googlescholar-id}{}
 % \extrainfo{extra information}
-
-\quote{``Be the change that you want to see in the world."}
 
 
 %-------------------------------------------------------------------------------
@@ -87,7 +97,7 @@
 % Leave any of these blank if they are not needed
 \makecvfooter
 {\today}
-{Byungjin Park~~~·~~~Résumé}
+{Léo Aparisi de Lannoy~~~·~~~Ph.D. candidate}
 {\thepage}
 
 

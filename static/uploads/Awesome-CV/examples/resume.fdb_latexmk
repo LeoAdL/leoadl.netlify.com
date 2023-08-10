@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1691618796 "resume.xdv" "resume.pdf" "resume" 1691618796 0
-  "resume.xdv" 1691618796 103988 715a03f43c6bdcfacae334f0faed1228 "xelatex"
+["xdvipdfmx"] 0 "resume.xdv" "resume.pdf" "resume" 0 -1
+  "resume.xdv" 1691639924 104004 788cc5eb35c8c6d8aec4229ea81ab39c "xelatex"
   (generated)
   "resume.pdf"
   (rewritten before read)
-["xelatex"] 1691618794 "resume.tex" "resume.xdv" "resume" 1691618796 0
+["xelatex"] 1691639922 "resume.tex" "resume.xdv" "resume" 1691639924 2
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1136768653 1528 abec98dbc43e172678c11b3b9031252a ""
@@ -172,14 +172,14 @@
   "/usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf" 1681165822 40967 d940221f8762fd5848760382d97d1226 ""
   "/usr/local/texlive/2023/texmf-var/web2c/xetex/xelatex.fmt" 1691276713 10796801 a3fa325cb8332a760614579ba37b6912 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "awesome-cv.cls" 1691618397 28269 a56104e7ad0d304804b21d40fe7da98a ""
-  "resume.aux" 1691618796 464 80727c0da4e59171bc88899b3dda9d51 "xelatex"
-  "resume.tex" 1691618397 3731 b8fba3a3f2abff88d05e7bebb80ee75d ""
-  "resume/certificates.tex" 1691618397 1736 78629a6b1160748ad70169f291b46285 ""
-  "resume/education.tex" 1666905314 1276 6230a6a5aa2c21a1243b3cd9ad99bb15 ""
-  "resume/experience.tex" 1691618397 7601 343cb27aaac523555723d45bd5ba567b ""
-  "resume/honors.tex" 1691618794 5610 e0baa95507095fb504e647e2cad13d03 ""
-  "resume/summary.tex" 1691618397 1173 8cccbb1be74bc9c53c5dee6ba7b7547d ""
+  "awesome-cv.cls" 1691619320 28269 a56104e7ad0d304804b21d40fe7da98a ""
+  "resume.aux" 1691639924 464 80727c0da4e59171bc88899b3dda9d51 "xelatex"
+  "resume.tex" 1691639439 3826 7f9dd0cd482e4ccfe73dee9adf8a559a ""
+  "resume/certificates.tex" 1691619320 1736 78629a6b1160748ad70169f291b46285 ""
+  "resume/education.tex" 1691639709 1483 1ed9a1c1e6762657ff5205c281fd9173 ""
+  "resume/experience.tex" 1691619320 7601 343cb27aaac523555723d45bd5ba567b ""
+  "resume/honors.tex" 1691619320 5610 e0baa95507095fb504e647e2cad13d03 ""
+  "resume/summary.tex" 1691619320 1173 8cccbb1be74bc9c53c5dee6ba7b7547d ""
   (generated)
   "resume.aux"
   "resume.log"
