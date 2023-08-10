@@ -30,7 +30,7 @@ social:
     link: https://github.com/LeoAdL
   - icon: linkedin
     icon_pack: fab
-    link: https://www.linkedin.com/in/leo-aparisi-de-lannoy-311b8684/
+    link: https://www.linkedin.com/in/leoadl/
   - icon: cv
     icon_pack: ai
     link: "uploads/Awesome-CV/examples/Leo_Aparisi_de_Lannoy_CV.pdf"

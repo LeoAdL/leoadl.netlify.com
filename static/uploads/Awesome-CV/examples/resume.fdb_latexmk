@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 0 "resume.xdv" "resume.pdf" "resume" 0 -1
-  "resume.xdv" 1691639924 104004 788cc5eb35c8c6d8aec4229ea81ab39c "xelatex"
+["xdvipdfmx"] 1691683966 "resume.xdv" "resume.pdf" "resume" 1691683966 0
+  "resume.xdv" 1691683966 75216 c59d348dcf0424ed99e7e225a1877758 "xelatex"
   (generated)
   "resume.pdf"
   (rewritten before read)
-["xelatex"] 1691639922 "resume.tex" "resume.xdv" "resume" 1691639924 2
+["xelatex"] 1691683964 "resume.tex" "resume.xdv" "resume" 1691683966 0
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1136768653 1528 abec98dbc43e172678c11b3b9031252a ""
@@ -173,13 +173,12 @@
   "/usr/local/texlive/2023/texmf-var/web2c/xetex/xelatex.fmt" 1691276713 10796801 a3fa325cb8332a760614579ba37b6912 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "awesome-cv.cls" 1691619320 28269 a56104e7ad0d304804b21d40fe7da98a ""
-  "resume.aux" 1691639924 464 80727c0da4e59171bc88899b3dda9d51 "xelatex"
-  "resume.tex" 1691639439 3826 7f9dd0cd482e4ccfe73dee9adf8a559a ""
-  "resume/certificates.tex" 1691619320 1736 78629a6b1160748ad70169f291b46285 ""
-  "resume/education.tex" 1691639709 1483 1ed9a1c1e6762657ff5205c281fd9173 ""
+  "resume.aux" 1691683966 464 642272556978b40963ab6b3ab7eb02a2 "xelatex"
+  "resume.tex" 1691683964 3769 5d562f1760e17e5ed87099b94e1650a0 ""
+  "resume/education.tex" 1691683572 1233 da1451d3ec2f4ccc35ca690d8473ee3a ""
   "resume/experience.tex" 1691619320 7601 343cb27aaac523555723d45bd5ba567b ""
-  "resume/honors.tex" 1691619320 5610 e0baa95507095fb504e647e2cad13d03 ""
-  "resume/summary.tex" 1691619320 1173 8cccbb1be74bc9c53c5dee6ba7b7547d ""
+  "resume/honors.tex" 1691682338 1007 98a0a73680fad5e6608630ac148b7638 ""
+  "resume/skills.tex" 1691619320 846 4371bb2a9ec1317c80391b0b6cec8613 ""
   (generated)
   "resume.aux"
   "resume.log"
