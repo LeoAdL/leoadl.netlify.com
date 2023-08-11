@@ -1,3 +1,22 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
 \documentclass[11pt, letterpaper]{awesome-cv}
 \providecolor{url}{HTML}{179299}
 \providecolor{link}{HTML}{179299}
@@ -32,6 +51,7 @@ citecolor=cite
 % \definecolor{lighttext}{HTML}{999999}
 % \definecolor{sectiondivider}{HTML}{5D5D5D}
 
+
 % Set false if you don't want to highlight section with awesome color
 \setbool{acvSectionColorHighlight}{false}
 
@@ -53,6 +73,7 @@ citecolor=cite
 \homepage{leoadl.com}
 \github{leoadl}
 \linkedin{leoadl}
+ \googlescholar{ZrkvVt0AAAAJ}{Scholar}
 % \gitlab{gitlab-id}
 % \stackoverflow{SO-id}{SO-name}
 % \twitter{@twit}
@@ -62,9 +83,7 @@ citecolor=cite
 % \kaggle{kaggle-id}
 % \googlescholar{googlescholar-id}{name-to-display}
 %% \firstname and \lastname will be used
- \googlescholar{ZrkvVt0AAAAJ}{Scholar}
 % \extrainfo{extra information}
-
 
 
 %-------------------------------------------------------------------------------
@@ -72,7 +91,7 @@ citecolor=cite
 
 % Print the header with above personal information
 % Give optional argument to change alignment(C: center, L: left, R: right)
-\makecvheader
+\makecvheader[C]
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
@@ -82,16 +101,19 @@ citecolor=cite
 {\thepage}
 
 
-
 %-------------------------------------------------------------------------------
 %	CV/RESUME CONTENT
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
-\input{cv/education.tex}
-\input{cv/Research_experience.tex}
-\input{cv/teaching_experience.tex}
-\input{cv/honors.tex}
-\input{cv/skills.tex}
+\input{resume/education.tex}
+\input{resume/experience.tex}
+\input{resume/teaching.tex}
+\input{resume/honors.tex}
+\input{resume/skills.tex}
+% \input{resume/presentation.tex}
+% \input{resume/writing.tex}
+% \input{resume/committees.tex}
+% \input{resume/extracurricular.tex}
 
 
 %-------------------------------------------------------------------------------

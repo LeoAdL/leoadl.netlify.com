@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1691683960 "Leo_Aparisi_de_Lannoy_CV.xdv" "Leo_Aparisi_de_Lannoy_CV.pdf" "Leo_Aparisi_de_Lannoy_CV" 1691683960 0
-  "Leo_Aparisi_de_Lannoy_CV.xdv" 1691683960 33772 c389be618c177f9ced30a8d7d10ac387 "xelatex"
+["xdvipdfmx"] 1691712618 "Leo_Aparisi_de_Lannoy_CV.xdv" "Leo_Aparisi_de_Lannoy_CV.pdf" "Leo_Aparisi_de_Lannoy_CV" 1691712619 0
+  "Leo_Aparisi_de_Lannoy_CV.xdv" 1691712618 33616 ad595325dc4dd8ac757c85dfda12a95e "xelatex"
   (generated)
   "Leo_Aparisi_de_Lannoy_CV.pdf"
   (rewritten before read)
-["xelatex"] 1691683958 "Leo_Aparisi_de_Lannoy_CV.tex" "Leo_Aparisi_de_Lannoy_CV.xdv" "Leo_Aparisi_de_Lannoy_CV" 1691683960 0
+["xelatex"] 1691712616 "Leo_Aparisi_de_Lannoy_CV.tex" "Leo_Aparisi_de_Lannoy_CV.xdv" "Leo_Aparisi_de_Lannoy_CV" 1691712619 0
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1136768653 1528 abec98dbc43e172678c11b3b9031252a ""
@@ -172,10 +172,10 @@
   "/usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf" 1681165822 40967 d940221f8762fd5848760382d97d1226 ""
   "/usr/local/texlive/2023/texmf-var/web2c/xetex/xelatex.fmt" 1691276713 10796801 a3fa325cb8332a760614579ba37b6912 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "Leo_Aparisi_de_Lannoy_CV.aux" 1691683960 464 4a44ff79e847885633a5b1d8ff00c655 "xelatex"
-  "Leo_Aparisi_de_Lannoy_CV.tex" 1691683957 3130 c94dee388c3eeadc5eea8e075cf4aba3 ""
+  "Leo_Aparisi_de_Lannoy_CV.aux" 1691712618 464 4a44ff79e847885633a5b1d8ff00c655 "xelatex"
+  "Leo_Aparisi_de_Lannoy_CV.tex" 1691712610 3131 ccd16592fa269a3fa6febf739821f2ed ""
   "awesome-cv.cls" 1691619320 28269 a56104e7ad0d304804b21d40fe7da98a ""
-  "cv/Research_experience.tex" 1691619320 1646 5c1896596ea5dca9a865d82b9f9ae940 ""
+  "cv/Research_experience.tex" 1691694235 1659 3e84474a9bb8dd6bff22bac6039bef82 ""
   "cv/education.tex" 1691619320 1600 1535ee4d54b5ec2f0a0f7fccc742d0fe ""
   "cv/honors.tex" 1691640098 1007 98a0a73680fad5e6608630ac148b7638 ""
   "cv/skills.tex" 1691619320 821 d8fdb984ee2b263b4a4e8c5113643b55 ""

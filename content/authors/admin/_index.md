@@ -33,7 +33,7 @@ social:
     link: https://www.linkedin.com/in/leoadl/
   - icon: cv
     icon_pack: ai
-    link: "uploads/Awesome-CV/examples/Leo_Aparisi_de_Lannoy_CV.pdf"
+    link: "uploads/Awesome-CV/examples/Leo_Aparisi_de_Lannoy_resume.pdf"
 
 organizations:
   - name: University of Chicago

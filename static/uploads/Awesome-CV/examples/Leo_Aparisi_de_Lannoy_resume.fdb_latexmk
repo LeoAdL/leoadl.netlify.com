@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1691712614 "coverletter.xdv" "coverletter.pdf" "coverletter" 1691712615 0
-  "coverletter.xdv" 1691712614 26948 2abf2a5698c8981ce33a1f531fabdfa5 "xelatex"
+["xdvipdfmx"] 1691712623 "Leo_Aparisi_de_Lannoy_resume.xdv" "Leo_Aparisi_de_Lannoy_resume.pdf" "Leo_Aparisi_de_Lannoy_resume" 1691712623 0
+  "Leo_Aparisi_de_Lannoy_resume.xdv" 1691712623 38664 140e019c0111c23cb6c5771d5dd63c92 "xelatex"
   (generated)
-  "coverletter.pdf"
+  "Leo_Aparisi_de_Lannoy_resume.pdf"
   (rewritten before read)
-["xelatex"] 1691712612 "coverletter.tex" "coverletter.xdv" "coverletter" 1691712615 0
+["xelatex"] 1691712621 "Leo_Aparisi_de_Lannoy_resume.tex" "Leo_Aparisi_de_Lannoy_resume.xdv" "Leo_Aparisi_de_Lannoy_resume" 1691712623 0
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1136768653 1528 abec98dbc43e172678c11b3b9031252a ""
@@ -172,11 +172,16 @@
   "/usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf" 1681165822 40967 d940221f8762fd5848760382d97d1226 ""
   "/usr/local/texlive/2023/texmf-var/web2c/xetex/xelatex.fmt" 1691276713 10796801 a3fa325cb8332a760614579ba37b6912 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
+  "Leo_Aparisi_de_Lannoy_resume.aux" 1691712623 464 4a44ff79e847885633a5b1d8ff00c655 "xelatex"
+  "Leo_Aparisi_de_Lannoy_resume.tex" 1691712602 3798 b27958b49b71dc0ff5b7fd0dad7c740f ""
   "awesome-cv.cls" 1691619320 28269 a56104e7ad0d304804b21d40fe7da98a ""
-  "coverletter.aux" 1691712614 464 4a44ff79e847885633a5b1d8ff00c655 "xelatex"
-  "coverletter.tex" 1691682495 5905 50e2b5bbd4ae6b33b39b0d0d7ae63d7f ""
+  "resume/education.tex" 1691683572 1233 da1451d3ec2f4ccc35ca690d8473ee3a ""
+  "resume/experience.tex" 1691702299 1872 55a1ad5981fd48e87ee67dae65727134 ""
+  "resume/honors.tex" 1691703200 969 bc608ff18de71e64419f3d0f7652d6e3 ""
+  "resume/skills.tex" 1691704091 1097 9c78d7bff4cd43572251a020569b2714 ""
+  "resume/teaching.tex" 1691704050 1078 2963c65aaea06008d32981859a3448fc ""
   (generated)
-  "coverletter.aux"
-  "coverletter.log"
-  "coverletter.xdv"
+  "Leo_Aparisi_de_Lannoy_resume.aux"
+  "Leo_Aparisi_de_Lannoy_resume.log"
+  "Leo_Aparisi_de_Lannoy_resume.xdv"
   (rewritten before read)

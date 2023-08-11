@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1691683966 "resume.xdv" "resume.pdf" "resume" 1691683966 0
-  "resume.xdv" 1691683966 75216 c59d348dcf0424ed99e7e225a1877758 "xelatex"
+["xdvipdfmx"] 1691712586 "resume.xdv" "resume.pdf" "resume" 1691712586 0
+  "resume.xdv" 1691712585 38664 467eb56e0e572d904855e860fb0f1160 "xelatex"
   (generated)
   "resume.pdf"
   (rewritten before read)
-["xelatex"] 1691683964 "resume.tex" "resume.xdv" "resume" 1691683966 0
+["xelatex"] 1691712584 "resume.tex" "resume.xdv" "resume" 1691712586 0
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1136768653 1528 abec98dbc43e172678c11b3b9031252a ""
@@ -173,12 +173,13 @@
   "/usr/local/texlive/2023/texmf-var/web2c/xetex/xelatex.fmt" 1691276713 10796801 a3fa325cb8332a760614579ba37b6912 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "awesome-cv.cls" 1691619320 28269 a56104e7ad0d304804b21d40fe7da98a ""
-  "resume.aux" 1691683966 464 642272556978b40963ab6b3ab7eb02a2 "xelatex"
-  "resume.tex" 1691683964 3769 5d562f1760e17e5ed87099b94e1650a0 ""
+  "resume.aux" 1691712585 464 4a44ff79e847885633a5b1d8ff00c655 "xelatex"
+  "resume.tex" 1691704367 3798 b27958b49b71dc0ff5b7fd0dad7c740f ""
   "resume/education.tex" 1691683572 1233 da1451d3ec2f4ccc35ca690d8473ee3a ""
-  "resume/experience.tex" 1691619320 7601 343cb27aaac523555723d45bd5ba567b ""
-  "resume/honors.tex" 1691682338 1007 98a0a73680fad5e6608630ac148b7638 ""
-  "resume/skills.tex" 1691619320 846 4371bb2a9ec1317c80391b0b6cec8613 ""
+  "resume/experience.tex" 1691702299 1872 55a1ad5981fd48e87ee67dae65727134 ""
+  "resume/honors.tex" 1691703200 969 bc608ff18de71e64419f3d0f7652d6e3 ""
+  "resume/skills.tex" 1691704091 1097 9c78d7bff4cd43572251a020569b2714 ""
+  "resume/teaching.tex" 1691704050 1078 2963c65aaea06008d32981859a3448fc ""
   (generated)
   "resume.aux"
   "resume.log"
