@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1691712614 "coverletter.xdv" "coverletter.pdf" "coverletter" 1691712615 0
-  "coverletter.xdv" 1691712614 26948 2abf2a5698c8981ce33a1f531fabdfa5 "xelatex"
+["xdvipdfmx"] 1694883495 "coverletter.xdv" "coverletter.pdf" "coverletter" 1694883495 0
+  "coverletter.xdv" 1694883495 26480 3236f5c48cab0bb2432dbfff47d9d7a4 "xelatex"
   (generated)
   "coverletter.pdf"
   (rewritten before read)
-["xelatex"] 1691712612 "coverletter.tex" "coverletter.xdv" "coverletter" 1691712615 0
+["xelatex"] 1694883493 "coverletter.tex" "coverletter.xdv" "coverletter" 1694883495 0
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1136768653 1528 abec98dbc43e172678c11b3b9031252a ""
@@ -82,7 +82,7 @@
   "/usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/xkeyval.tex" 1655411236 19231 27205ee17aaa2902aea3e0c07a3cfc65 ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/xkvutils.tex" 1655411236 7677 9cb1a74d945bc9331f2181c0a59ff34a ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/xstring/xstring.sty" 1544223003 123 a302f2c651a95033260db60e51527ae8 ""
-  "/usr/local/texlive/2023/texmf-dist/tex/generic/xstring/xstring.tex" 1673816135 48215 374fa42173896b227f2f50bc75dfda91 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/generic/xstring/xstring.tex" 1692744296 49397 a8071cbd06dd0bb15ae8acf876c73f20 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsbsy.sty" 1686341992 2222 499d61426192c39efd8f410ee1a52b9c ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsgen.sty" 1686341992 4173 82ac04dfb1256038fad068287fbb4fe6 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty" 1686341992 88371 d84032c0f422c3d1e282266c01bef237 ""
@@ -132,9 +132,9 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/kvoptions/kvoptions.sty" 1655478651 22555 6d8e155cfef6d82c3d5c742fea7c992e ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty" 1665067230 13815 760b0c02f691ea230f5359c4e1de23a7 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-xetex.def" 1681935207 31866 ab7ff58e8b7eb91f5882424abf292263 ""
-  "/usr/local/texlive/2023/texmf-dist/tex/latex/l3kernel/expl3.sty" 1691092723 6547 f555780e27ecc336e91c4363c766c947 ""
-  "/usr/local/texlive/2023/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty" 1675461949 4674 257c150d9d5c2fbc229303c8beaf6228 ""
-  "/usr/local/texlive/2023/texmf-dist/tex/latex/l3packages/xparse/xparse.sty" 1675461949 6812 3c152a1c8d562d7b7291c4839b61a5c3 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/l3kernel/expl3.sty" 1693351260 6547 93cfd2d5e9d40d6ac03d44dd9b0face0 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty" 1693773314 4674 f8858208a18cf3115e892fb13f8b78db ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/l3packages/xparse/xparse.sty" 1693773314 9327 42f235aa5042e39fdc94e4fc0343a2fa ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/lato/lato.sty" 1561498483 4549 25530e3700e22bf0cd2731b570ec622a ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty" 1575499565 5766 13a9e8766c47f30327caf893ece86ac8 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/parskip/parskip.sty" 1615762720 4288 94714aa7f535440f33181fec52a31963 ""
@@ -162,18 +162,18 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/tools/calc.sty" 1686341992 10214 75bcd28386d4b4b9f28b2aff3cea7b24 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/tools/verbatim.sty" 1686341992 7392 ed69c044ab18d5539723c1c7b8c2ee88 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/trimspaces/trimspaces.sty" 1253232110 1380 971a51b00a14503ddf754cab24c3f209 ""
-  "/usr/local/texlive/2023/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex" 1550269384 241265 52e61157376139e230f2a9ef4be9503f ""
-  "/usr/local/texlive/2023/texmf-dist/tex/latex/unicode-math/unicode-math-xetex.sty" 1580422878 132064 7222bed5bbafecb5b7690ac9561b42d1 ""
-  "/usr/local/texlive/2023/texmf-dist/tex/latex/unicode-math/unicode-math.sty" 1580422878 1474 aba4cc64ac109084e74e3e749fbcd54e ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex" 1691956686 241443 1a7594ad34b6e3e9ee4c5855f2c3ee83 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/unicode-math/unicode-math-xetex.sty" 1691956686 131459 a23c98c9e5ecfc17568c7bc94fda1317 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/unicode-math/unicode-math.sty" 1691956686 1474 b42cfbe849cb22ed1c0632800327884f ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty" 1655066402 56148 51a9a8571c07b9921892ae11063ae853 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/xifthen/xifthen.sty" 1448319911 5689 1bfa68243e89a54479e7d0580773c57e ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1655411236 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "/usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf" 1681165822 40967 d940221f8762fd5848760382d97d1226 ""
-  "/usr/local/texlive/2023/texmf-var/web2c/xetex/xelatex.fmt" 1691276713 10796801 a3fa325cb8332a760614579ba37b6912 ""
+  "/usr/local/texlive/2023/texmf-var/web2c/xetex/xelatex.fmt" 1694619118 10808276 09d299265f57067a33a34392939b84f6 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "awesome-cv.cls" 1691619320 28269 a56104e7ad0d304804b21d40fe7da98a ""
-  "coverletter.aux" 1691712614 464 4a44ff79e847885633a5b1d8ff00c655 "xelatex"
+  "awesome-cv.cls" 1694883488 28276 20e0cd36fd2116d624a6d91acaf433b7 ""
+  "coverletter.aux" 1694883495 464 4a44ff79e847885633a5b1d8ff00c655 "xelatex"
   "coverletter.tex" 1691682495 5905 50e2b5bbd4ae6b33b39b0d0d7ae63d7f ""
   (generated)
   "coverletter.aux"
