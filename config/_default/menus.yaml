@@ -10,9 +10,6 @@ main:
   - name: Resume
     url: uploads/Awesome-CV/examples/Leo_Aparisi_de_Lannoy_resume.pdf
     weight: 25
-  - name: Academic CV
-    url: uploads/Awesome-CV/examples/Leo_Aparisi_de_Lannoy_CV.pdf
-    weight: 30
   - name: Papers
     url: /#publications
     weight: 40
