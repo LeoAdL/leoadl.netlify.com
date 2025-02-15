@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1739637555.90688 "Leo_Aparisi_de_Lannoy_resume.xdv" "Leo_Aparisi_de_Lannoy_resume.pdf" "Leo_Aparisi_de_Lannoy_resume" 1739637556.12996 0
-  "Leo_Aparisi_de_Lannoy_resume.xdv" 1739637555.85127 36864 202daff0065a9993ad13b2676048ea2c "xelatex"
+["xdvipdfmx"] 1739637860.99567 "Leo_Aparisi_de_Lannoy_resume.xdv" "Leo_Aparisi_de_Lannoy_resume.pdf" "Leo_Aparisi_de_Lannoy_resume" 1739637861.23238 0
+  "Leo_Aparisi_de_Lannoy_resume.xdv" 1739637860.9413 36504 70c2fc3bee1fe98d1119ac09f2536124 "xelatex"
   (generated)
   "Leo_Aparisi_de_Lannoy_resume.pdf"
   (rewritten before read)
-["xelatex"] 1739637554.39556 "Leo_Aparisi_de_Lannoy_resume.tex" "Leo_Aparisi_de_Lannoy_resume.xdv" "Leo_Aparisi_de_Lannoy_resume" 1739637556.12868 0
+["xelatex"] 1739637859.56235 "Leo_Aparisi_de_Lannoy_resume.tex" "Leo_Aparisi_de_Lannoy_resume.xdv" "Leo_Aparisi_de_Lannoy_resume" 1739637861.23103 0
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1136768653 1528 abec98dbc43e172678c11b3b9031252a ""
@@ -172,14 +172,14 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1727217670 42021 a58d36c7ede3d2fc9f93da62d691ddff ""
   "/usr/local/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1737937881 5904805 21be6a4f3a0eff03f249c286efe9cf94 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "Leo_Aparisi_de_Lannoy_resume.aux" 1739637555.85088 72 49953267bd44a605718cb5e0eb508bfe "xelatex"
+  "Leo_Aparisi_de_Lannoy_resume.aux" 1739637860.9407 72 49953267bd44a605718cb5e0eb508bfe "xelatex"
   "Leo_Aparisi_de_Lannoy_resume.tex" 1739637550.56813 3844 3958ddfe9690e4951bcd17648fe7df59 ""
   "awesome-cv.cls" 1694883488.90785 28276 20e0cd36fd2116d624a6d91acaf433b7 ""
   "resume/education.tex" 1739637306.37417 1240 1fb5177ba35b7c1da2b322e0ca5661c7 ""
   "resume/experience.tex" 1695680814.56705 1113 3d8072f879777e8a0bd8d94cb5fefefe ""
   "resume/honors.tex" 1694886019.59115 941 2bce695ca447fd619eb5913dca0e1de4 ""
   "resume/skills.tex" 1715033213.76186 1217 8b144c3354dd31d19088e66dcf9d106c ""
-  "resume/teaching.tex" 1695680472.50355 1346 bcc06b4575a05eb031b9dfb8a8fa2daf ""
+  "resume/teaching.tex" 1739637852.88756 1247 c07451b08ab3402cb2b945911338dc4b ""
   "resume/work.tex" 1739637200.6886 395 d2dadc360b97e09700877141cf0dd42e ""
   (generated)
   "Leo_Aparisi_de_Lannoy_resume.aux"
