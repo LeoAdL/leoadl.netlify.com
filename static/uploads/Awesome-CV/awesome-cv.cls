@@ -24,6 +24,14 @@
 \ProvidesClass{awesome-cv}[2017/02/05 v1.6.1 Awesome Curriculum Vitae Class]
 \NeedsTeXFormat{LaTeX2e}
 
+% LuaLaTeX is required for the HarfBuzz font renderer used below.
+\RequirePackage{iftex}
+\ifluatex\else
+	\ClassError{awesome-cv}{LuaLaTeX is required}
+	{Run latexmk from the repository root, or select LuaLaTeX in your editor.}
+	\expandafter\endinput
+\fi
+
 
 %-------------------------------------------------------------------------------
 %                Class options
@@ -48,6 +56,7 @@
 %-------------------------------------------------------------------------------
 % Needed to make fixed length table
 \RequirePackage{array}
+\RequirePackage{tabularx}
 % Needed to handle list environment
 \RequirePackage{enumitem}
 % Needed to handle text alignment
@@ -58,8 +67,6 @@
 \RequirePackage{fancyhdr}
 % Needed to manage colors
 \RequirePackage{xcolor}
-% Needed to use \ifxetex-\else-\fi statement
-\RequirePackage{ifxetex}
 % Needed to use \if-\then-\else statement
 \RequirePackage{xifthen}
 % Needed to strip chars from telephone number
@@ -74,16 +81,42 @@
 \defaultfontfeatures{Ligatures=TeX}
 % Needed to manage math fonts
 \RequirePackage{unicode-math}
-% Needed to use icons from ont-awesome
-\RequirePackage{fontawesome5}
-\RequirePackage{lato}
+% Needed to use icons from font-awesome
+\RequirePackage{fontawesome6}
+\RequirePackage{accsupp}
+\defaultfontfeatures{
+	Renderer=HarfBuzz,
+}
+\setmainfont{Source Sans 3}[
+	UprightFont=*,
+	ItalicFont=* Italic,
+	BoldFont=* Bold,
+	BoldItalicFont=* Bold Italic,
+	FontFace={l}{n}{Font=* Light},
+	FontFace={l}{it}{Font=* Light Italic},
+]
+\setsansfont{Source Sans 3}[
+	UprightFont=*,
+	ItalicFont=* Italic,
+	BoldFont=* Bold,
+	BoldItalicFont=* Bold Italic,
+	FontFace={l}{n}{Font=* Light},
+	FontFace={l}{it}{Font=* Light Italic},
+]
+\newfontfamily\roboto{Roboto}[
+	UprightFont=*,
+	ItalicFont=* Italic,
+	BoldFont=* Bold,
+	BoldItalicFont=* Bold Italic,
+	FontFace={l}{n}{Font=* Light},
+	FontFace={l}{it}{Font=* Light Italic},
+]
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs
 \RequirePackage{parskip}
 % Needed to deal hyperlink
-\definecolor{link}{HTML}{5E81AC}
-\RequirePackage[colorlinks=true, allcolors= link,unicode,pdfpagelabels=false]{hyperref}
+\RequirePackage[hidelinks,unicode,pdfpagelabels=false]{hyperref}
 \hypersetup{%
 	pdftitle={},
 	pdfauthor={},
@@ -98,7 +131,7 @@
 %-------------------------------------------------------------------------------
 % Configure an optional directory location for fonts(default: 'fonts/')
 % Not required anymore but left in place for backward compatability.
-\newcommand*{\ontdir}[1][fonts/]{\def\@fontdir{#1}}
+\newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
 
 %-------------------------------------------------------------------------------
 %                Configuration for layout
@@ -135,6 +168,7 @@
 \definecolor{red}{HTML}{FB4485}
 \definecolor{blue}{HTML}{6CE0F1}
 % Text colors
+\definecolor{darktext}{HTML}{414141}
 \colorlet{text}{darkgray}
 \colorlet{graytext}{gray}
 \colorlet{lighttext}{lightgray}
@@ -163,11 +197,11 @@
 %-------------------------------------------------------------------------------
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
-\newcommand*{\headerfont}{\lato}
-\newcommand*{\headerfontlight}{\lato}
-\newcommand*{\footerfont}{\lato}
-\newcommand*{\bodyfont}{\lato}
-\newcommand*{\bodyfontlight}{\lato}
+\newcommand*{\headerfont}{\roboto\selectfont}
+\newcommand*{\headerfontlight}{\roboto\fontseries{l}\selectfont}
+\newcommand*{\footerfont}{\sffamily}
+\newcommand*{\bodyfont}{\sffamily}
+\newcommand*{\bodyfontlight}{\sffamily\fontseries{l}\selectfont}
 
 %-------------------------------------------------------------------------------
 %                Configuration for styles
@@ -181,43 +215,57 @@
 \newcommand*{\headersocialstyle}[1]{{\fontsize{6.8pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
-\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
+\newcommand*{\sectionstyleface}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries #1}}
+\newcommand*{\sectionstyle}[1]{%
+	\def\@acvSectionTmp{#1}
+	\ifthenelse{\boolean{acvSectionColorHighlight}}{%
+		\StrSplit{\@acvSectionTmp}{3}{\acvSectionStringAwesome}{\acvSectionStringPlain}%
+		\color{awesome}\sectionstyleface{\acvSectionStringAwesome%
+			\color{text}{\acvSectionStringPlain}}}%
+	{\color{text}\sectionstyleface{\@acvSectionTmp}}}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
 \newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
 
 % For elements of entry
 \newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\entrypositionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\scshape\color{graytext} #1}}
-\newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\scshape\color{graytext} #1}}
-\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\scshape\color{awesome} #1}}
+\newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 \newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of subentry
 \newcommand*{\subentrytitlestyle}[1]{{\fontsize{8pt}{1em}\bodyfont\mdseries\color{graytext} #1}}
 \newcommand*{\subentrypositionstyle}[1]{{\fontsize{7pt}{1em}\bodyfont\scshape\color{graytext} #1}}
-\newcommand*{\subentrydatestyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\scshape\color{graytext} #1}}
-\newcommand*{\subentrylocationstyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\scshape\color{awesome} #1}}
+\newcommand*{\subentrydatestyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
+\newcommand*{\subentrylocationstyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 \newcommand*{\subdescriptionstyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of honor
 \newcommand*{\honortitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
 \newcommand*{\honorpositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\honordatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
-\newcommand*{\honorlocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\scshape\color{awesome} #1}}
+\newcommand*{\honorlocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 
 % For elements of skill
 \newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\skillsetstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{text} #1}}
 
 % For elements of the cover letter
-\newcommand*{\lettersectionstyle}[1]{{\fontsize{14pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
+\newcommand*{\lettersectionstyleface}[1]{{\fontsize{14pt}{1em}\bodyfont\bfseries #1}}
+\newcommand*{\lettersectionstyle}[1]{%
+	\def\@acvLetterSectionTmp{#1}
+	\ifthenelse{\boolean{acvSectionColorHighlight}}{%
+		\StrSplit{\@acvLetterSectionTmp}{3}{\acvLetterSectionStringAwesome}{\acvLetterSectionStringPlain}%
+		\color{awesome}\sectionstyleface{\acvLetterSectionStringAwesome%
+			\color{text}{\acvLetterSectionStringPlain}}}%
+	{\color{text}\lettersectionstyleface{\@acvLetterSectionTmp}}}
 \newcommand*{\recipientaddressstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\scshape\color{graytext} #1}}
 \newcommand*{\recipienttitlestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\lettertitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\bfseries\color{darktext} \underline{#1}}}
-\newcommand*{\letterdatestyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\scshape\color{graytext} #1}}
+\newcommand*{\letterdatestyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\lettertextstyle}{\fontsize{10pt}{1.4em}\bodyfontlight\upshape\color{graytext}}
 \newcommand*{\letternamestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\letterenclosurestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\scshape\color{lighttext} #1}}
+\newcommand*{\letterenclosurestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{lighttext} #1}}
 
 
 %-------------------------------------------------------------------------------
@@ -272,6 +320,20 @@
 	\StrDel{\@teluri}{)}[\@teluri]%
 }
 
+% Defines writer's WhatsApp (optional)
+% Usage: \whatsapp{<mobile number>}
+\newcommand*{\whatsapp}[1]
+{
+	\def\@whatsapp{#1}
+	\def\@wameuri{https://wa.me/\@whatsapp}
+	% Strip unwanted characters
+	\StrDel{\@wameuri}{ }[\@wameuri]%
+	\StrDel{\@wameuri}{+}[\@wameuri]%
+	\StrDel{\@wameuri}{-}[\@wameuri]%
+	\StrDel{\@wameuri}{(}[\@wameuri]%
+	\StrDel{\@wameuri}{)}[\@wameuri]%
+}
+
 % Defines writer's email (optional)
 % Usage: \email{<email address>}
 \newcommand*{\email}[1]{\def\@email{#1}}
@@ -314,6 +376,10 @@
 % Usage: \twitter{<twitter handle>}
 \newcommand*{\twitter}[1]{\def\@twitter{#1}}
 
+% Defines writer's x (formerly twitter) (optional)
+% Usage: \x{<x account>}
+\newcommand*{\x}[1]{\def\@x{#1}}
+
 % Defines writer's Mastodon (optional)
 % Usage: \mastodon{<instance>}{<mastodon-nick>}
 \newcommand*{\mastodon}[2]{\def\@mastodoninstance{#1}\def\@mastodonname{#2}}
@@ -341,6 +407,14 @@
 % Defines writer's kaggle (optional)
 % Usage: \kaggle{<kaggle handle>}
 \newcommand*{\kaggle}[1]{\def\@kaggle{#1}}
+
+% Defines writer's Hackerrank (optional)
+% Usage: \hackerrank{<Hackerrank profile name>}
+\newcommand*{\hackerrank}[1]{\def\@hackerrank{#1}}
+
+% Defines writer's Telegram (optional)
+% Usage: \telegram{<Telegram username>}
+\newcommand*{\telegram}[1]{\def\@telegram{#1}}
 
 % Defines writer's google scholar profile (optional)
 % Usage: \googlescholar{<googlescholar userid>}{<googlescholar username>}
@@ -409,7 +483,7 @@
 \newcommand{\acvHeaderAfterPositionSkip}{.4mm}
 \newcommand{\acvHeaderAfterAddressSkip}{-.5mm}
 \newcommand{\acvHeaderIconSep}{\space}
-\newcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+\newcommand{\acvHeaderSocialSep}{\BeginAccSupp{ActualText={}}\quad\textbar\quad\EndAccSupp{}}
 \newcommand{\acvHeaderAfterSocialSkip}{6mm}
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
 
@@ -422,6 +496,7 @@
 %                Commands for utilities
 %-------------------------------------------------------------------------------
 % Use to align an element of tabular table
+\renewcommand{\tabularxcolumn}{p}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
@@ -432,6 +507,11 @@
 % Use to execute conditional statements by checking empty string
 \newcommand*{\ifempty}[3]{\ifthenelse{\isempty{#1}}{#2}{#3}}
 
+\newcommand{\faAlt}[3]{%
+	\BeginAccSupp{ActualText={#1}}%
+	\mbox{#2\acvHeaderIconSep#3}%
+	\EndAccSupp{}%
+}
 
 %-------------------------------------------------------------------------------
 %                Commands for elements of CV structure
@@ -477,117 +557,140 @@
 			\ifthenelse{\isundefined{\@mobile}}%
 			{}%
 			{%
-				\href{\@teluri}{\faMobile\acvHeaderIconSep\@mobile}%
+				\href{\@teluri}{\faAlt{tel:\@mobile}{\faMobile}{\@mobile}}%
 				\setbool{isstart}{false}%
+			}%
+			\ifthenelse{\isundefined{\@whatsapp}}%
+			{}%
+			{%
+				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+				\href{\@wameuri}{\faAlt{WhatsApp: \@whatsapp}{\faSquareWhatsapp}{\@whatsapp}}%
 			}%
 			\ifthenelse{\isundefined{\@email}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{mailto:\@email}{\faEnvelope\acvHeaderIconSep\@email}%
+				\href{mailto:\@email}{\faAlt{mailto:\@email}{\faEnvelope}{\@email}}%
 			}%
 			\ifthenelse{\isundefined{\@dateofbirth}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				% \mbox prevents wrapping of elements%
-				\mbox{\faBirthdayCake\acvHeaderIconSep\@dateofbirth}%
+				\faAlt{DoB: \@dateofbirth}{\faCakeCandles}{\@dateofbirth}%
 			}%
 			\ifthenelse{\isundefined{\@homepage}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{http://\@homepage}{\faHome\acvHeaderIconSep\@homepage}%
+				\href{\@homepage}{\faAlt{homepage: \@homepage}{\faHouseChimney}{\@homepage}}%
 			}%
 			\ifthenelse{\isundefined{\@github}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://github.com/\@github}{\faGithubSquare\acvHeaderIconSep\@github}%
+				\href{https://github.com/\@github}{\faAlt{GitHub: @\@github}{\faSquareGithub}{\@github}}%
 			}%
 			\ifthenelse{\isundefined{\@gitlab}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://gitlab.com/\@gitlab}{\faGitlab\acvHeaderIconSep\@gitlab}%
+				\href{https://gitlab.com/\@gitlab}{\faAlt{GitLab: @\@gitlab}{\faGitlab}{\@gitlab}}%
 			}%
 			\ifthenelse{\isundefined{\@bitbucket}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://bitbucket.com/\@bitbucket}{\faBitbucket\acvHeaderIconSep\@bitbucket}%
+				\href{https://bitbucket.com/\@bitbucket}{\faAlt{BitBucket: @\@bitbucket}{\faBitbucket}{\@bitbucket}}%
 			}%
 			\ifthenelse{\isundefined{\@stackoverflowid}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://stackoverflow.com/users/\@stackoverflowid}{\faStackOverflow\acvHeaderIconSep\@stackoverflowname}%
+				\href{https://stackoverflow.com/users/\@stackoverflowid}{\faAlt{StackOverflow: @\@stackoverflowname}{\faStackOverflow}{\@stackoverflowname}}%
 			}%
 			\ifthenelse{\isundefined{\@linkedin}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://www.linkedin.com/in/\@linkedin}{\faLinkedin\acvHeaderIconSep\@linkedin}%
+				\href{https://www.linkedin.com/in/\@linkedin}{\faAlt{LinkedIn: /in/\@linkedin}{\faLinkedin}{\@linkedin}}%
 			}%
 			\ifthenelse{\isundefined{\@orcid}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://orcid.org/\@orcid}{\faOrcid\acvHeaderIconSep\@orcid}%
+				\href{https://orcid.org/\@orcid}{\faAlt{OrcID: \@orcid}{\faOrcid}{\@orcid}}%
 			}%
 			\ifthenelse{\isundefined{\@twitter}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://twitter.com/\@twitter}{\faTwitter\acvHeaderIconSep\@twitter}%
+				\href{https://twitter.com/\@twitter}{\faAlt{Twitter: @\@twitter}{\faTwitter}{\@twitter}}%
+			}%
+			\ifthenelse{\isundefined{\@x}}%
+			{}%
+			{%
+				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+				\href{https://x.com/\@x}{\faAlt{X: @\@x}{\faXTwitter}{\@x}}%
 			}%
 			\ifthenelse{\isundefined{\@mastodonname}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://\@mastodoninstance/@\@mastodonname}{\faMastodon\acvHeaderIconSep\@mastodonname}%
+				\href{https://\@mastodoninstance/@\@mastodonname}{\faAlt{Mastodon: \@mastodonname{}@\@mastodoninstance}{\faMastodon}{\@mastodonname}}%
 			}%
 			\ifthenelse{\isundefined{\@skype}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\faSkype\acvHeaderIconSep\@skype%
+				\faAlt{Skype: \@skype}{\faSkype}{\@skype}%
 			}%
 			\ifthenelse{\isundefined{\@reddit}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://www.reddit.com/user/\@reddit}{\faReddit\acvHeaderIconSep\@reddit}%
+				\href{https://www.reddit.com/user/\@reddit}{\faAlt{Reddit: /u/\@reddit}{\faReddit}{\@reddit}}%
 			}%
 			\ifthenelse{\isundefined{\@researchgate}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://www.researchgate.net/profile/\@researchgate}{\faResearchgate\acvHeaderIconSep\@researchgate}%
+				\href{https://www.researchgate.net/profile/\@researchgate}{\faAlt{ResearchGate: \@researchgate}{\faResearchgate}{\@researchgate}}%
 			}%
 			\ifthenelse{\isundefined{\@xing}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://www.xing.com/profile/\@xing}{\faXingSquare\acvHeaderIconSep\@xing}
+				\href{https://www.xing.com/profile/\@xing}{\faAlt{Xing: \@xing}{\faSquareXing}{\@xing}}
 			}%
 			\ifthenelse{\isundefined{\@medium}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://medium.com/@\@medium}{\faMedium\acvHeaderIconSep\@medium}%
+				\href{https://medium.com/@\@medium}{\faAlt{Medium: @\@medium}{\faMedium}{\@medium}}%
 			}%
 			\ifthenelse{\isundefined{\@kaggle}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://kaggle.com/\@kaggle}{\faKaggle\acvHeaderIconSep\@kaggle}%
+				\href{https://kaggle.com/\@kaggle}{\faAlt{Kaggle: \@kaggle}{\faKaggle}{\@kaggle}}%
+			}%
+			\ifthenelse{\isundefined{\@hackerrank}}%
+			{}%
+			{%
+				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+				\href{https://www.hackerrank.com/\@hackerrank}{\faAlt{HackerRank: \@hackerrank}{\faHackerrank}{\@hackerrank}}%
+			}%
+			\ifthenelse{\isundefined{\@telegram}}%
+			{}%
+			{%
+				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+				\href{https://t.me/\@telegram}{\faAlt{Telegram: \@telegram}{\faTelegram}{\@telegram}}%
 			}%
 			\ifthenelse{\isundefined{\@googlescholarid}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://scholar.google.com/citations?user=\@googlescholarid}{\faGraduationCap\acvHeaderIconSep\@googlescholarname}%
+				\href{https://scholar.google.com/citations?user=\@googlescholarid}{\faAlt{Google Scholar: \@googlescholarid}{\faGraduationCap}{\@googlescholarname}}%
 			}%
 			\ifthenelse{\isundefined{\@extrainfo}}%
 			{}%
@@ -646,7 +749,7 @@
 \newenvironment{cventries}{%
 	\vspace{\acvSectionContentTopSkip}
 	\begin{center}
-		}{%
+}{%
 	\end{center}
 }
 % Define an entry of cv information
@@ -669,7 +772,7 @@
 % Define an environment for cvsubentry
 \newenvironment{cvsubentries}{%
 	\begin{center}
-		}{%
+}{%
 	\end{center}
 }
 % Define a subentry of cv information
@@ -695,11 +798,11 @@
 	\vspace{\acvSectionContentTopSkip}
 	\vspace{-2mm}
 	\begin{center}
-		\setlength\tabcolsep{0pt}
-		\setlength{\extrarowheight}{0pt}
-		\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 4.0cm} R{2.5cm}}
-			}{%
-		\end{tabular*}
+	\setlength\tabcolsep{0pt}
+	\setlength{\extrarowheight}{0pt}
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 4.0cm} R{2.5cm}}
+}{%
+	\end{tabular*}
 	\end{center}
 }
 % Define a line of cv information(honor, award or something else)
@@ -712,31 +815,30 @@
 \newenvironment{cvskills}{%
 	\vspace{\acvSectionContentTopSkip}
 	\vspace{-2.0mm}
-	\begin{center}
-		\setlength\tabcolsep{1ex}
-		\setlength{\extrarowheight}{0pt}
-		\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} r L{\textwidth * \real{0.9}}}
-			}{%
-		\end{tabular*}
-	\end{center}
+	\setlength\tabcolsep{1ex}
+	\setlength{\extrarowheight}{0pt}
+	\tabularx{\textwidth}{r>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X}
+}{%
+	\endtabularx\par
 }
+
 % Define a line of cv information(skill)
 % Usage: \cvskill{<type>}{<skillset>}
 \newcommand*{\cvskill}[2]{%
-	\skilltypestyle{#1} & \skillsetstyle{#2} \\
+	\skilltypestyle{#1} & \leavevmode\skillsetstyle{#2} \\
 }
 
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}{%
 	\vspace{-4.0mm}
 	\begin{justify}
-		\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
-			\setlength{\parskip}{0pt}
-			\renewcommand{\labelitemi}{\bullet}
-			}{%
-		\end{itemize}
+	\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+	\setlength{\parskip}{0pt}
+	\renewcommand{\labelitemi}{\bullet}
+}{%
+	\end{itemize}
 	\end{justify}
-	\vspace{-4.0mm}
+	\vspace{1.0mm}
 }
 
 

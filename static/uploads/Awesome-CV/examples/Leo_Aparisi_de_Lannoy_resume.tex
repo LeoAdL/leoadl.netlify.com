@@ -17,7 +17,30 @@
 %-------------------------------------------------------------------------------
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
-\documentclass[11pt, letterpaper]{awesome-cv}
+\documentclass[12pt, letterpaper]{awesome-cv}
+% ---------- IBM Plex Sans ----------
+\newfontfamily\plexsansfont{IBMPlexSans}[
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-SemiBold,        % Plex Bold is heavy; SemiBold reads better
+  BoldItalicFont = *-SemiBoldItalic,
+]
+\newfontfamily\plexsanslightfont{IBMPlexSans}[
+  Extension      = .otf,
+  UprightFont    = *-Light,
+  ItalicFont     = *-LightItalic,
+  BoldFont       = *-Medium,
+  BoldItalicFont = *-MediumItalic,
+]
+
+\renewcommand*{\headerfont}{\plexsansfont}
+\renewcommand*{\headerfontlight}{\plexsanslightfont}
+\renewcommand*{\footerfont}{\plexsansfont}
+\renewcommand*{\bodyfont}{\plexsansfont}
+\renewcommand*{\bodyfontlight}{\plexsanslightfont}
+
+% -----------------------------------
 \providecolor{url}{HTML}{000000}
 \providecolor{link}{HTML}{000000}
 \providecolor{cite}{HTML}{000000}
@@ -67,9 +90,9 @@ citecolor=cite
 % \photo{./examples/profile.png}
 \name{Léo}{Aparisi de Lannoy}
 \mobile{(+1)312-394-9854}
-\email{laparisidelannoy@uchicago.edu}
+\email{leoaparisi@gmail.com}
 %\dateofbirth{07-27-1995}
-\extrainfo{French citizen (F1 visa)}
+\extrainfo{French citizen (H-1B visa since 10/01/2025)}
 \homepage{leoadl.com}
 \github{leoadl}
 \linkedin{leoadl}
@@ -107,8 +130,8 @@ citecolor=cite
 %-------------------------------------------------------------------------------
 \input{resume/work.tex}
 \input{resume/education.tex}
-\input{resume/teaching.tex}
 \input{resume/experience.tex}
+\input{resume/teaching.tex}
 \input{resume/honors.tex}
 \input{resume/skills.tex}
 % \input{resume/presentation.tex}
@@ -119,6 +142,3 @@ citecolor=cite
 
 %-------------------------------------------------------------------------------
 \end{document}
-%%% Local Variables: 
-%%% TeX-engine: xetex
-%%% End: 
