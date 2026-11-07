@@ -1,22 +1,16 @@
-.PHONY: examples
+.PHONY: resume clean distclean
 
-CC = xelatex
 EXAMPLES_DIR = examples
-RESUME_DIR = examples/resume
-CV_DIR = examples/cv
-RESUME_SRCS = $(shell find $(RESUME_DIR) -name '*.tex')
-CV_SRCS = $(shell find $(CV_DIR) -name '*.tex')
+RESUME = Leo_Aparisi_de_Lannoy_resume
 
-examples: $(foreach x, coverletter cv resume, $x.pdf)
+# latexmk tracks dependencies itself; examples/latexmkrc selects LuaLaTeX
+resume:
+	cd $(EXAMPLES_DIR) && latexmk $(RESUME).tex
 
-resume.pdf: $(EXAMPLES_DIR)/resume.tex $(RESUME_SRCS)
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
-
-cv.pdf: $(EXAMPLES_DIR)/cv.tex $(CV_SRCS)
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
-
-coverletter.pdf: $(EXAMPLES_DIR)/coverletter.tex
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
-
+# Remove auxiliary files, keep the PDF (it is published on the website)
 clean:
-	rm -rf $(EXAMPLES_DIR)/*.pdf
+	cd $(EXAMPLES_DIR) && latexmk -c $(RESUME).tex
+
+# Remove auxiliary files and the PDF
+distclean:
+	cd $(EXAMPLES_DIR) && latexmk -C $(RESUME).tex

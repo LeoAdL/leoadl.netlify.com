@@ -19,7 +19,10 @@
 %-------------------------------------------------------------------------------
 % Tagged PDF/UA-2: structure and reading order are embedded for parsers and screen readers
 \DocumentMetadata{lang=en-US, pdfversion=2.0, pdfstandard=ua-2, tagging=on}
+% No math in the resume, so skip MathML generation
+\tagpdfsetup{math/mathml/luamml/load=false}
 \documentclass[12pt, letterpaper]{awesome-cv}
+\usepackage[american]{babel} % US English, matching lang=en-US above
 % ---------- IBM Plex Sans ----------
 % Use Plex everywhere, including text the class leaves unstyled (e.g. honor commas)
 \setmainfont{IBMPlexSans}[
@@ -45,6 +48,9 @@
   BoldFont       = *-SemiBold,        % Plex Bold is heavy; SemiBold reads better
   BoldItalicFont = *-SemiBoldItalic,
   Ligatures      = TeX,
+  % Plex has no small caps: map the class's \scshape to the upright faces
+  SmallCapsFont  = *-Regular,
+  BoldFeatures   = {SmallCapsFont = *-SemiBold},
 ]
 \newfontfamily\plexsanslightfont{IBMPlexSans}[
   Extension      = .otf,
@@ -53,6 +59,8 @@
   BoldFont       = *-Medium,
   BoldItalicFont = *-MediumItalic,
   Ligatures      = TeX,
+  SmallCapsFont  = *-Light,
+  BoldFeatures   = {SmallCapsFont = *-Medium},
 ]
 
 \renewcommand*{\headerfont}{\plexsansfont}
@@ -66,21 +74,38 @@
 % Character protrusion and font expansion for tighter, more even lines
 \usepackage{microtype}
 
+% QR code to the website in the top-right corner of page 1, for printed copies.
+% Drawn at shipout so the header layout is untouched; no link (the header has one).
+\usepackage[nolink]{qrcode}
+\newlength{\qrsize}
+\setlength{\qrsize}{1.6cm}
+\newsavebox{\qrbox}
+\AddToHookNext{shipout/foreground}{%
+	% Decoration for tag-aware readers: the URL is already in the header
+	\tagmcbegin{artifact}\tagstop
+	\sbox{\qrbox}{\qrcode[height=\qrsize]{https://leoadl.com}}%
+	% Top edge level with the top margin (0.8cm), right edge on the right margin (1cm)
+	\put(0,0){\rlap{%
+		\hspace{\dimexpr\paperwidth-1cm-\wd\qrbox\relax}%
+		\raisebox{\dimexpr-0.8cm-\ht\qrbox\relax}[0pt][0pt]{\usebox{\qrbox}}}}%
+	\tagstart\tagmcend
+}
+
+% No hyphenation: split words ("con- sumer") hurt keyword matching in parsers.
+% \emergencystretch lets lines stretch a little more instead of overflowing.
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\setlength{\emergencystretch}{1em}
+
 % -----------------------------------
-\providecolor{url}{HTML}{000000}
-\providecolor{link}{HTML}{000000}
-\providecolor{cite}{HTML}{000000}
 % Define a section for CV
 % Usage: \cvsection{<section-title>}
 \hypersetup{pdfauthor={Léo Aparisi de Lannoy},
 pdftitle={Léo Aparisi de Lannoy - Resume},
 pdfkeywords={Quantitative Research, Alternative Data, Equity Alphas, kdb+/q, Python, Macro-Finance},
 pdfsubject={Resume},
-pdfcreator={},
-colorlinks=true,
-linkcolor=link,
-urlcolor=url,
-citecolor=cite
+pdfcontactemail={leoaparisi@gmail.com},
+pdfcontacturl={https://leoadl.com}
 }
 % Configure page margins with geometry
 \geometry{left=1cm, top=.8cm, right=1cm, bottom=1.5cm, footskip=.6cm}
@@ -118,7 +143,7 @@ citecolor=cite
 \mobile{(+1)312-394-9854}
 \email{leoaparisi@gmail.com}
 %\dateofbirth{07-27-1995}
-\extrainfo{French citizen (H-1B visa since 10/01/2025)}
+\extrainfo{French citizen (H-1B visa since 2025-10-01)}
 \homepage{leoadl.com}
 \github{leoadl}
 \linkedin{leoadl}

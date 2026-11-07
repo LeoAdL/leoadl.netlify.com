@@ -79,10 +79,10 @@
 \RequirePackage[quiet]{fontspec}
 % To support LaTeX quoting style
 \defaultfontfeatures{Ligatures=TeX}
-% Needed to manage math fonts
-\RequirePackage{unicode-math}
 % Needed to use icons from font-awesome
 \RequirePackage{fontawesome6}
+% Needed for academic icons (Google Scholar)
+\RequirePackage{academicons}
 \RequirePackage{accsupp}
 \defaultfontfeatures{
 	Renderer=HarfBuzz,
@@ -111,8 +111,6 @@
 	FontFace={l}{n}{Font=* Light},
 	FontFace={l}{it}{Font=* Light Italic},
 ]
-% Needed for the photo ID
-\RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs
 \RequirePackage{parskip}
 % Needed to deal hyperlink
@@ -294,6 +292,8 @@
 % Define photo ID
 % Usage: \photo[circle|rectangle,edge|noedge,left|right]{<path-to-image>}
 \newcommand{\photo}[2][circle,edge,left]{%
+	% Loaded only when a photo is used: tcolorbox pulls in TikZ
+	\RequirePackage[skins]{tcolorbox}%
 	\def\@photo{#2}
 	\@for\tmp:=#1\do{%
 		\ifthenelse{\equal{\tmp}{circle} \or \equal{\tmp}{rectangle}}%
@@ -717,7 +717,7 @@
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://scholar.google.com/citations?user=\@googlescholarid}{\faAlt{Google Scholar: \@googlescholarid}{\faGraduationCap}{\@googlescholarname}}%
+				\href{https://scholar.google.com/citations?user=\@googlescholarid}{\faAlt{Google Scholar: \@googlescholarid}{\mbox{\aiicon{googlescholar}}}{\@googlescholarname}}%
 			}%
 			\ifthenelse{\isundefined{\@extrainfo}}%
 			{}%
@@ -868,7 +868,7 @@
 	\justifying
 	\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
 	\setlength{\parskip}{0pt}
-	\renewcommand{\labelitemi}{\bullet}
+	\renewcommand{\labelitemi}{\textbullet}
 }{%
 	\end{itemize}
 	\vspace{1.0mm}

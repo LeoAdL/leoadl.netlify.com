@@ -1,0 +1,6 @@
+# latexmk config: awesome-cv.cls requires LuaLaTeX (also needed for PDF tagging)
+$pdf_mode = 4;          # 4 = lualatex
+
+# Create the PDF only, no .dvi or .ps
+$postscript_mode = 0;
+$dvi_mode = 0;

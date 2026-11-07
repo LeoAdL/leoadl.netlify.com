@@ -24,3 +24,10 @@
 
 ## LuaLaTeX tagging (MathML side output)
 *-luamml-mathml.html
+
+## latexmk / SyncTeX / AUCTeX build state
+*.fdb_latexmk
+*.synctex
+*.synctex.gz
+*.synctex(busy)
+.auctex-auto/
