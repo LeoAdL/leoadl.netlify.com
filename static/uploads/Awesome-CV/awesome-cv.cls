@@ -80,7 +80,7 @@
 % To support LaTeX quoting style
 \defaultfontfeatures{Ligatures=TeX}
 % Needed to use icons from font-awesome
-\RequirePackage{fontawesome6}
+\RequirePackage{fontawesome7}
 % Needed for academic icons (Google Scholar)
 \RequirePackage{academicons}
 \RequirePackage{accsupp}
