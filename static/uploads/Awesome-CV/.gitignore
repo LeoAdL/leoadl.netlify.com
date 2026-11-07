@@ -31,3 +31,6 @@
 *.synctex.gz
 *.synctex(busy)
 .auctex-auto/
+
+## macOS text clippings
+*.textClipping
