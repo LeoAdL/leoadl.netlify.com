@@ -134,6 +134,27 @@
 \newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
 
 %-------------------------------------------------------------------------------
+%                Configuration for PDF tagging
+%-------------------------------------------------------------------------------
+% Active only when the document starts with \DocumentMetadata{... tagging=on ...}
+\newif\if@acvtagging
+\AddToHook{begindocument}{%
+	\@ifpackageloaded{tagpdf}{%
+		\@acvtaggingtrue
+		% Entries are laid out with tables, but they are not data tables
+		\tagpdfsetup{table/tagging=div, attach-css=false}%
+	}{}%
+}
+% Tag a decoration (rules, leaders) as an artifact so tag-aware readers skip it
+\ExplSyntaxOn
+\cs_new_protected:Npn \acv@artifactbegin
+	{ \tag_mc_end_push: \tag_mc_begin:n { artifact } }
+\cs_new_protected:Npn \acv@artifactend
+	{ \tag_mc_end: \tag_mc_begin_pop:n { } }
+\ExplSyntaxOff
+
+
+%-------------------------------------------------------------------------------
 %                Configuration for layout
 %-------------------------------------------------------------------------------
 %% Page Layout
@@ -168,7 +189,6 @@
 \definecolor{red}{HTML}{FB4485}
 \definecolor{blue}{HTML}{6CE0F1}
 % Text colors
-\definecolor{darktext}{HTML}{414141}
 \colorlet{text}{darkgray}
 \colorlet{graytext}{gray}
 \colorlet{lighttext}{lightgray}
@@ -507,10 +527,15 @@
 % Use to execute conditional statements by checking empty string
 \newcommand*{\ifempty}[3]{\ifthenelse{\isempty{#1}}{#2}{#3}}
 
+% Usage: \faAlt{<text for extractors>}{<icon>}{<visible text>}
 \newcommand{\faAlt}[3]{%
-	\BeginAccSupp{ActualText={#1}}%
-	\mbox{#2\acvHeaderIconSep#3}%
-	\EndAccSupp{}%
+	\mbox{%
+		% The icon is decoration: hidden from text extraction and tagged as an artifact
+		\if@acvtagging\acv@artifactbegin\fi
+		\BeginAccSupp{ActualText={}}#2\acvHeaderIconSep\EndAccSupp{}%
+		\if@acvtagging\acv@artifactend\fi
+		\BeginAccSupp{ActualText={#1}}#3\EndAccSupp{}%
+	}%
 }
 
 %-------------------------------------------------------------------------------
@@ -544,11 +569,13 @@
 	}%
 	\begin{minipage}[c]{\headerphotowidth}%
 		\ifthenelse{\equal{\@photoalign}{left}}{\raggedright\drawphoto}{}
-	\end{minipage}
+	\end{minipage}%
 	\begin{minipage}[c]{\headertextwidth}
 		\ifthenelse{\equal{#1}{L}}{\raggedright}{\ifthenelse{\equal{#1}{R}}{\raggedleft}{\centering}}
-		\headerfirstnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}%
-		\\[\acvHeaderAfterNameSkip]%
+		\setlength{\parskip}{0pt}%
+		{\if@acvtagging\tagpdfsetup{para/tag=H1}\fi
+			\headerfirstnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}\par}%
+		\vspace{\acvHeaderAfterNameSkip}%
 		\ifthenelse{\isundefined{\@position}}{}{\headerpositionstyle{\@position\\[\acvHeaderAfterPositionSkip]}}%
 		\ifthenelse{\isundefined{\@address}}{}{\headeraddressstyle{\@address\\[\acvHeaderAfterAddressSkip]}}%
 		\headersocialstyle{%
@@ -721,9 +748,15 @@
 % Usage: \cvsection{<section-title>}
 \newcommand{\cvsection}[1]{%
 	\vspace{\acvSectionTopSkip}
+	\begingroup
+	\if@acvtagging\tagpdfsetup{para/tag=H2}\fi
 	\sectionstyle{#1}
 	\phantomsection
-	\color{sectiondivider}\vhrulefill{0.9pt}
+	\if@acvtagging\acv@artifactbegin\fi
+	\color{sectiondivider}\vhrulefill{0.9pt}%
+	\if@acvtagging\acv@artifactend\fi
+	\par
+	\endgroup
 }
 
 % Define a subsection for CV
@@ -831,13 +864,13 @@
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}{%
 	\vspace{-4.0mm}
-	\begin{justify}
+	% \justifying rather than the justify environment, which breaks PDF tagging inside table cells
+	\justifying
 	\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
 	\setlength{\parskip}{0pt}
 	\renewcommand{\labelitemi}{\bullet}
 }{%
 	\end{itemize}
-	\end{justify}
 	\vspace{1.0mm}
 }
 

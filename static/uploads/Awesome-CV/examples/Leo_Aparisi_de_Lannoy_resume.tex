@@ -1,4 +1,4 @@
-%!TEX TS-program = xelatex
+%!TEX TS-program = lualatex
 %!TEX encoding = UTF-8 Unicode
 % Awesome CV LaTeX Template for CV/Resume
 %
@@ -17,14 +17,34 @@
 %-------------------------------------------------------------------------------
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
+% Tagged PDF/UA-2: structure and reading order are embedded for parsers and screen readers
+\DocumentMetadata{lang=en-US, pdfversion=2.0, pdfstandard=ua-2, tagging=on}
 \documentclass[12pt, letterpaper]{awesome-cv}
 % ---------- IBM Plex Sans ----------
+% Use Plex everywhere, including text the class leaves unstyled (e.g. honor commas)
+\setmainfont{IBMPlexSans}[
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-SemiBold,
+  BoldItalicFont = *-SemiBoldItalic,
+  Ligatures      = TeX,
+]
+\setsansfont{IBMPlexSans}[
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-SemiBold,
+  BoldItalicFont = *-SemiBoldItalic,
+  Ligatures      = TeX,
+]
 \newfontfamily\plexsansfont{IBMPlexSans}[
   Extension      = .otf,
   UprightFont    = *-Regular,
   ItalicFont     = *-Italic,
   BoldFont       = *-SemiBold,        % Plex Bold is heavy; SemiBold reads better
   BoldItalicFont = *-SemiBoldItalic,
+  Ligatures      = TeX,
 ]
 \newfontfamily\plexsanslightfont{IBMPlexSans}[
   Extension      = .otf,
@@ -32,6 +52,7 @@
   ItalicFont     = *-LightItalic,
   BoldFont       = *-Medium,
   BoldItalicFont = *-MediumItalic,
+  Ligatures      = TeX,
 ]
 
 \renewcommand*{\headerfont}{\plexsansfont}
@@ -39,6 +60,11 @@
 \renewcommand*{\footerfont}{\plexsansfont}
 \renewcommand*{\bodyfont}{\plexsansfont}
 \renewcommand*{\bodyfontlight}{\plexsanslightfont}
+% Plex has no small caps, so give the header position a readable size instead
+\renewcommand*{\headerpositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{awesome} #1}}
+
+% Character protrusion and font expansion for tighter, more even lines
+\usepackage{microtype}
 
 % -----------------------------------
 \providecolor{url}{HTML}{000000}
@@ -46,20 +72,18 @@
 \providecolor{cite}{HTML}{000000}
 % Define a section for CV
 % Usage: \cvsection{<section-title>}
-\hypersetup{pdfauthor={Leo Aparisi de Lannoy}
-pdftitle={},
-pdfkeywords={},
-pdfsubject={},
+\hypersetup{pdfauthor={Léo Aparisi de Lannoy},
+pdftitle={Léo Aparisi de Lannoy - Resume},
+pdfkeywords={Quantitative Research, Alternative Data, Equity Alphas, kdb+/q, Python, Macro-Finance},
+pdfsubject={Resume},
 pdfcreator={},
-pdflang={English},
-breaklinks=true,
 colorlinks=true,
 linkcolor=link,
 urlcolor=url,
 citecolor=cite
 }
 % Configure page margins with geometry
-\geometry{left=1cm, top=.8cm, right=1cm, bottom=1.5cm, footskip=.5cm}
+\geometry{left=1cm, top=.8cm, right=1cm, bottom=1.5cm, footskip=.6cm}
 
 % Color for highlights
 % Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
@@ -89,6 +113,8 @@ citecolor=cite
 % Available options: circle|rectangle,edge/noedge,left/right
 % \photo{./examples/profile.png}
 \name{Léo}{Aparisi de Lannoy}
+\position{Quantitative Researcher}
+\address{New York, NY}
 \mobile{(+1)312-394-9854}
 \email{leoaparisi@gmail.com}
 %\dateofbirth{07-27-1995}
