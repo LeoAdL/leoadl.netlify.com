@@ -79,6 +79,19 @@
 \RequirePackage[quiet]{fontspec}
 % To support LaTeX quoting style
 \defaultfontfeatures{Ligatures=TeX}
+% Icon glyphs extract as a space. Extractors that ignore ActualText (Apple
+% PDFKit, Ghostscript) otherwise read icon names such as "GITHUB-SQUARE".
+% Must be registered before the icon fonts are loaded.
+\directlua{
+	luatexbase.add_to_callback("luaotfload.patch_font", function(fontdata)
+		local name = fontdata.psname or fontdata.fullname or ""
+		if name:find("FontAwesome") or name:find("Academicons") then
+			for _, char in pairs(fontdata.characters or {}) do
+				char.tounicode = "0020"
+			end
+		end
+	end, "awesome-cv.iconspace")
+}
 % Needed to use icons from font-awesome
 \RequirePackage{fontawesome7}
 % Needed for academic icons (Google Scholar)
@@ -615,7 +628,7 @@
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://github.com/\@github}{\faAlt{GitHub: @\@github}{\faSquareGithub}{\@github}}%
+				\href{https://github.com/\@github}{\faAlt{GitHub: github.com/\@github}{\faSquareGithub}{github.com/\@github}}%
 			}%
 			\ifthenelse{\isundefined{\@gitlab}}%
 			{}%
@@ -639,7 +652,7 @@
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://www.linkedin.com/in/\@linkedin}{\faAlt{LinkedIn: /in/\@linkedin}{\faLinkedin}{\@linkedin}}%
+				\href{https://www.linkedin.com/in/\@linkedin}{\faAlt{LinkedIn: linkedin.com/in/\@linkedin}{\faLinkedin}{linkedin.com/in/\@linkedin}}%
 			}%
 			\ifthenelse{\isundefined{\@orcid}}%
 			{}%
@@ -788,6 +801,7 @@
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{%
+	\global\acv@firstitemsheadingtrue
 	\vspace{-2.0mm}
 	\setlength\tabcolsep{0pt}
 	\setlength{\extrarowheight}{0pt}
@@ -872,6 +886,24 @@
 }{%
 	\end{itemize}
 	\vspace{1.0mm}
+}
+
+% Define a heading for a group of cvitems inside a cventry description
+% Usage: \cvitemsheading{<heading>}
+\newif\ifacv@firstitemsheading
+\newcommand*{\cvitemsheading}[1]{%
+	\par
+	% The first heading of an entry takes the place of cvitems right below the position
+	\ifacv@firstitemsheading
+		\vspace{-4.0mm}%
+		\global\acv@firstitemsheadingfalse
+	\fi
+	\begingroup
+	\if@acvtagging\tagpdfsetup{para/tag=H3}\fi
+	{\bodyfont\bfseries\color{darktext}#1}\par
+	\endgroup
+	% Cancel the negative space at the start of the following cvitems
+	\vspace{4.0mm}%
 }
 
 
