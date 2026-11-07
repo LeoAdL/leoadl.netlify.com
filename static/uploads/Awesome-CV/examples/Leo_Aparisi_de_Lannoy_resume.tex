@@ -68,28 +68,18 @@
 \renewcommand*{\footerfont}{\plexsansfont}
 \renewcommand*{\bodyfont}{\plexsansfont}
 \renewcommand*{\bodyfontlight}{\plexsanslightfont}
-% Plex has no small caps, so give the header position a readable size instead
-\renewcommand*{\headerpositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{awesome} #1}}
+% Plex has no small caps, so give the positions a readable size instead
+\renewcommand*{\headerpositionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\color{awesome} #1}}
+\renewcommand*{\entrypositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
+% Smaller name, larger contact line
+\renewcommand*{\headerfirstnamestyle}[1]{{\fontsize{24pt}{1em}\headerfontlight\color{graytext} #1}}
+\renewcommand*{\headerlastnamestyle}[1]{{\fontsize{24pt}{1em}\headerfont\bfseries\color{text} #1}}
+\renewcommand*{\headersocialstyle}[1]{{\fontsize{7.8pt}{1em}\headerfont\color{text} #1}}
+% Smaller section headings
+\renewcommand*{\sectionstyleface}[1]{{\fontsize{13pt}{1em}\bodyfont\bfseries #1}}
 
 % Character protrusion and font expansion for tighter, more even lines
 \usepackage{microtype}
-
-% QR code to the website in the top-right corner of page 1, for printed copies.
-% Drawn at shipout so the header layout is untouched; no link (the header has one).
-\usepackage[nolink]{qrcode}
-\newlength{\qrsize}
-\setlength{\qrsize}{1.6cm}
-\newsavebox{\qrbox}
-\AddToHookNext{shipout/foreground}{%
-	% Decoration for tag-aware readers: the URL is already in the header
-	\tagmcbegin{artifact}\tagstop
-	\sbox{\qrbox}{\qrcode[height=\qrsize]{https://leoadl.com}}%
-	% Top edge level with the top margin (0.8cm), right edge on the right margin (1cm)
-	\put(0,0){\rlap{%
-		\hspace{\dimexpr\paperwidth-1cm-\wd\qrbox\relax}%
-		\raisebox{\dimexpr-0.8cm-\ht\qrbox\relax}[0pt][0pt]{\usebox{\qrbox}}}}%
-	\tagstart\tagmcend
-}
 
 % No hyphenation: split words ("con- sumer") hurt keyword matching in parsers.
 % \emergencystretch lets lines stretch a little more instead of overflowing.
@@ -128,11 +118,10 @@ pdfcontacturl={https://leoadl.com}
 \setbool{acvSectionColorHighlight}{false}
 
 % If you would like to change the social information separator from a pipe (|) to something else
-\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+\renewcommand{\acvHeaderSocialSep}{\enspace\textbar\enspace}
 
 % Tighter vertical rhythm to keep the resume on one page
 \renewcommand{\acvHeaderAfterSocialSkip}{4mm}
-\renewcommand{\acvSectionTopSkip}{1.5mm}
 
 
 %-------------------------------------------------------------------------------
@@ -147,7 +136,7 @@ pdfcontacturl={https://leoadl.com}
 \mobile{(+1)312-394-9854}
 \email{leoaparisi@gmail.com}
 %\dateofbirth{07-27-1995}
-\extrainfo{French citizen · H-1B visa}
+\extrainfo{\mbox{French citizen · H-1B visa}}
 \homepage{leoadl.com}
 \github{leoadl}
 \linkedin{leoadl}
@@ -170,13 +159,6 @@ pdfcontacturl={https://leoadl.com}
 % Print the header with above personal information
 % Give optional argument to change alignment(C: center, L: left, R: right)
 \makecvheader[L]
-
-% Print the footer with 3 arguments(<left>, <center>, <right>)
-% Leave any of these blank if they are not needed
-\makecvfooter
-{\today}
-{Léo Aparisi de Lannoy}
-{\thepage}
 
 
 %-------------------------------------------------------------------------------
