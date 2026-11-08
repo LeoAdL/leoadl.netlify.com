@@ -17,6 +17,9 @@
 %-------------------------------------------------------------------------------
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
+% Fixed random seed: tagpdf draws its user-namespace ID from it, so the PDF is
+% byte-identical across builds (dates come from SOURCE_DATE_EPOCH, see latexmkrc)
+\ExplSyntaxOn \sys_gset_rand_seed:n {1} \ExplSyntaxOff
 % Tagged PDF/UA-2: structure and reading order are embedded for parsers and screen readers
 \DocumentMetadata{lang=en-US, pdfversion=2.0, pdfstandard=ua-2, tagging=on}
 % No math in the resume, so skip MathML generation
@@ -24,41 +27,37 @@
 \documentclass[12pt, letterpaper]{awesome-cv}
 \usepackage[american]{babel} % US English, matching lang=en-US above
 % ---------- IBM Plex Sans ----------
+% Load Plex from TeX Live (via kpathsea) rather than any system-installed copy,
+% so the PDF does not depend on what is in ~/Library/Fonts
+\edef\plexpath{\directlua{tex.sprint((kpse.find_file("IBMPlexSans-Regular.otf", "opentype fonts"):gsub("[^/]*$", "")))}}
+\defaultfontfeatures{Path = \plexpath, Extension = .otf, Ligatures = TeX}
 % Use Plex everywhere, including text the class leaves unstyled (e.g. honor commas)
 \setmainfont{IBMPlexSans}[
-  Extension      = .otf,
   UprightFont    = *-Regular,
   ItalicFont     = *-Italic,
   BoldFont       = *-SemiBold,
   BoldItalicFont = *-SemiBoldItalic,
-  Ligatures      = TeX,
 ]
 \setsansfont{IBMPlexSans}[
-  Extension      = .otf,
   UprightFont    = *-Regular,
   ItalicFont     = *-Italic,
   BoldFont       = *-SemiBold,
   BoldItalicFont = *-SemiBoldItalic,
-  Ligatures      = TeX,
 ]
 \newfontfamily\plexsansfont{IBMPlexSans}[
-  Extension      = .otf,
   UprightFont    = *-Regular,
   ItalicFont     = *-Italic,
   BoldFont       = *-SemiBold,        % Plex Bold is heavy; SemiBold reads better
   BoldItalicFont = *-SemiBoldItalic,
-  Ligatures      = TeX,
   % Plex has no small caps: map the class's \scshape to the upright faces
   SmallCapsFont  = *-Regular,
   BoldFeatures   = {SmallCapsFont = *-SemiBold},
 ]
 \newfontfamily\plexsanslightfont{IBMPlexSans}[
-  Extension      = .otf,
   UprightFont    = *-Light,
   ItalicFont     = *-LightItalic,
   BoldFont       = *-Medium,
   BoldItalicFont = *-MediumItalic,
-  Ligatures      = TeX,
   SmallCapsFont  = *-Light,
   BoldFeatures   = {SmallCapsFont = *-Medium},
 ]

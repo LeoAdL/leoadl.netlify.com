@@ -1,6 +1,18 @@
 # latexmk config: awesome-cv.cls requires LuaLaTeX (also needed for PDF tagging)
 $pdf_mode = 4;          # 4 = lualatex
 
+# Stop at the first error instead of carrying on past it
+$lualatex = 'lualatex -interaction=nonstopmode -halt-on-error -file-line-error %O %S';
+
 # Create the PDF only, no .dvi or .ps
 $postscript_mode = 0;
 $dvi_mode = 0;
+
+# Reproducible PDF: date it by the newest source file instead of the build time,
+# so rebuilding unchanged sources gives a byte-identical PDF (clean git diffs)
+my $epoch = 0;
+for my $f (glob('*.tex resume/*.tex awesome-cv.cls')) {
+  my $mtime = int((stat $f)[9]);  # latexmk's stat is fractional; LuaTeX needs an integer
+  $epoch = $mtime if $mtime > $epoch;
+}
+$ENV{SOURCE_DATE_EPOCH} //= $epoch;

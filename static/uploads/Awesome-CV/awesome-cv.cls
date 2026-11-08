@@ -597,7 +597,7 @@
 			\ifthenelse{\isundefined{\@mobile}}%
 			{}%
 			{%
-				\href{\@teluri}{\faAlt{tel:\@mobile}{\faMobile}{\@mobile}}%
+				\href{\@teluri}{\faAlt{Phone: \@mobile}{\faMobile}{\@mobile}}%
 				\setbool{isstart}{false}%
 			}%
 			\ifthenelse{\isundefined{\@whatsapp}}%
@@ -610,7 +610,7 @@
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{mailto:\@email}{\faAlt{mailto:\@email}{\faEnvelope}{\@email}}%
+				\href{mailto:\@email}{\faAlt{Email: \@email}{\faEnvelope}{\@email}}%
 			}%
 			\ifthenelse{\isundefined{\@dateofbirth}}%
 			{}%
@@ -622,7 +622,7 @@
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{\@homepage}{\faAlt{homepage: \@homepage}{\faHouseChimney}{\@homepage}}%
+				\href{\@homepage}{\faAlt{Website: \@homepage}{\faHouseChimney}{\@homepage}}%
 			}%
 			\ifthenelse{\isundefined{\@github}}%
 			{}%
@@ -730,7 +730,7 @@
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{https://scholar.google.com/citations?user=\@googlescholarid}{\faAlt{Google Scholar: \@googlescholarid}{\mbox{\aiicon{googlescholar}}}{\@googlescholarname}}%
+				\href{https://scholar.google.com/citations?user=\@googlescholarid}{\faAlt{Google Scholar}{\mbox{\aiicon{googlescholar}}}{\@googlescholarname}}%
 			}%
 			\ifthenelse{\isundefined{\@extrainfo}}%
 			{}%
