@@ -73,8 +73,6 @@
 \RequirePackage{xstring}
 % Needed to use a toolbox of programming tools
 \RequirePackage{etoolbox}
-% Needed to change line spacing in specific environment
-\RequirePackage{setspace}
 % Needed to manage fonts
 \RequirePackage[quiet]{fontspec}
 % To support LaTeX quoting style
@@ -134,8 +132,6 @@
 	pdfsubject={},
 	pdfkeywords={}
 }
-% Solves issues Warning: File `cv.out' has changed
-\RequirePackage{bookmark}
 
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
