@@ -372,7 +372,7 @@
 \newcommand*{\dateofbirth}[1]{\def\@dateofbirth{#1}}
 
 % Defines writer's homepage (optional)
-% Usage: \homepage{<url>}
+% Usage: \homepage{<domain>}, without https:// (added to the link)
 \newcommand*{\homepage}[1]{\def\@homepage{#1}}
 
 % Defines writer's github (optional)
@@ -618,7 +618,7 @@
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{\@homepage}{\faAlt{Website: \@homepage}{\faHouseChimney}{\@homepage}}%
+				\href{https://\@homepage}{\faAlt{Website: \@homepage}{\faHouseChimney}{\@homepage}}%
 			}%
 			\ifthenelse{\isundefined{\@github}}%
 			{}%
