@@ -840,13 +840,11 @@
 \newenvironment{cvhonors}{%
 	\vspace{\acvSectionContentTopSkip}
 	\vspace{-2mm}
-	\begin{center}
-	\setlength\tabcolsep{0pt}
 	\setlength{\extrarowheight}{0pt}
-	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 4.0cm} R{2.5cm}}
+	% Small fixed gap after the date, so text extractors keep each date with its honor (see cvskills)
+	\tabularx{\textwidth}{@{}l@{\hspace{0.5em}}>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X@{}r@{}}
 }{%
-	\end{tabular*}
-	\end{center}
+	\endtabularx\par
 }
 % Define a line of cv information(honor, award or something else)
 % Usage: \cvhonor{<position>}{<title>}{<location>}{<date>}
@@ -858,9 +856,10 @@
 \newenvironment{cvskills}{%
 	\vspace{\acvSectionContentTopSkip}
 	\vspace{-2.0mm}
-	\setlength\tabcolsep{1ex}
 	\setlength{\extrarowheight}{0pt}
-	\tabularx{\textwidth}{r>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X}
+	% Label and skills sit about one space apart: wider gaps make text extractors
+	% (Poppler, Apple PDFKit) read the labels as a separate column, unpaired from their skills
+	\tabularx{\textwidth}{@{}r@{\hspace{0.3em}}>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X@{}}
 }{%
 	\endtabularx\par
 }
