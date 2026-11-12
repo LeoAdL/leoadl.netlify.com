@@ -884,9 +884,9 @@
 }
 
 % Define a heading for a group of cvitems inside a cventry description
-% Usage: \cvitemsheading{<heading>}
+% Usage: \cvitemsheading[<date(s)>]{<heading>}
 \newif\ifacv@firstitemsheading
-\newcommand*{\cvitemsheading}[1]{%
+\newcommand*{\cvitemsheading}[2][]{%
 	\par
 	% The first heading of an entry takes the place of cvitems right below the position
 	\ifacv@firstitemsheading
@@ -895,7 +895,7 @@
 	\fi
 	\begingroup
 	\if@acvtagging\tagpdfsetup{para/tag=H3}\fi
-	{\bodyfont\bfseries\color{darktext}#1}\par
+	{\bodyfont\bfseries\color{darktext}#2}\hfill\entrydatestyle{#1}\par
 	\endgroup
 	% Cancel the negative space at the start of the following cvitems
 	\vspace{4.0mm}%
